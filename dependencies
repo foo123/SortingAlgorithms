@@ -1,0 +1,108 @@
+###################################################
+#
+#   The buildtools repository is at:
+#   https://github.com/foo123/scripts/buildtools
+#
+###################################################
+
+# A '#' represents a comment and everything after it is skipped
+# Lines starting with # or blank lines are skipped
+# One line for each setting, no multiple settings on same line, line indentation does not matter
+# Blocks with =[] define LISTS (arrays)
+# Blocks with ={} define MAPS (hashmaps)
+# Blocks with =[{}] define ORDEREDMAPS (array of hashmaps)
+# Blocks with = or nothing define VALUES (single value)
+# A key and/or value can be quoted (with ", ' or `, quotes) or unquoted
+# Lines with one or multiple '@'s define the end of that many previous blocks
+
+# The input files (list)
+SRC =[]
+
+    !tpl:umd-exports-header-no-worker.tpl.js  # include a umd-header template
+    
+    ### Core file ###
+    ./src/Sort.js
+
+    ### Comparison-Based Algorithms ###
+    ./src/comparison/BuiltinSort.js
+
+    ./src/comparison/BubbleSort.js
+    ./src/comparison/CocktailSort.js
+    ./src/comparison/ShellSort.js
+    ./src/comparison/HeapSort.js
+    ./src/comparison/InsertionSort.js
+    ./src/comparison/CycleSort.js
+    ./src/comparison/LibrarySort.js
+    ./src/comparison/MergeSort.js
+    ./src/comparison/QuickSort.js
+
+    # !!not implemented yet!!
+    ./src/comparison/TimSort.js
+
+
+    ### Number/Count-Based Algorithms ###
+    ./src/arithmetic/CountingSort.js
+    ./src/arithmetic/BucketSort.js
+
+    ## a couple of custom algorithms ##
+    ./src/arithmetic/IndexSort.js
+    # not complete, in progress
+    ./src/arithmetic/StatisticalSort.js
+
+    !tpl:umd-exports-footer.tpl.js  # include a umd-footer template
+    
+@  # end block
+
+# extract header from this file
+HEADER = 
+./src/Sort.js
+
+# Any texts to be replaced in the final file (map)
+REPLACE =[{}]
+
+    "@@EXPORTS@@" = "EXPORTS"
+    
+    "@@VERSION@@" = "0.2.3"
+    
+    "@@USE_STRICT@@" = '"use strict";'
+    
+    "@@MODULE_NAME@@" = "Sort"
+    
+    "@@MODULE_DEPENDENCIES@@" = "null"
+    
+    "@@MODULE_ARGUMENTS@@"  = "undef"
+    
+@  # end block
+
+# Extract documentation from the source (map)
+DOC ={}
+    
+    "STARTDOC" = "/**[DOC_MARKDOWN]"
+    "ENDDOC" = "[/DOC_MARKDOWN]**/"
+    "OUTPUT" = "./manual.md"
+
+@  # end block
+
+# Minify the Package (map of lists)
+MINIFY ={}
+
+    # Options for Node UglifyJS Compiler (if used), (default minify options, mangle and compress)
+    "UGLIFY" =[]
+        -m -c
+    @  # end block
+
+    # Options for Java Closure Compiler (if used), (default minify options)
+    "CLOSURE" =[]
+        --language_in=ECMASCRIPT5_STRICT
+    @  # end block
+
+    # Options for Java YUI Compressor Compiler (if used), (default minify options)
+    "YUI" =[]
+        --preserve-semi
+    @  # end block
+    
+@  # end block
+
+# The final output file (value)
+OUT =
+./test/js/sort.min.js
