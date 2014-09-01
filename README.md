@@ -3,6 +3,10 @@ Sorting Algorithms
 
 __Various sorting algorithms implementations in JavaScript  (IN PROGRESS)__
 
+
+[sort.min.js](https://raw.githubusercontent.com/foo123/SortingAlgorithms/master/test/js/sort.min.js)
+
+
 [![screenshot](/test/screenshot.png)](http://foo123.github.io/examples/sorting-algorithms/)
 
 

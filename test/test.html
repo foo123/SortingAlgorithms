@@ -527,14 +527,14 @@
                     },
                     
                     types: {
-                        sorting_algorithm: $MV.Type.Cast.STRING,
-                        data_size: $MV.Type.Cast.INTEGER,
-                        data_type: $MV.Type.Cast.STRING,
-                        pre_sort_state: $MV.Type.Cast.STRING
+                        sorting_algorithm: $MV.Type.Cast.STR,
+                        data_size: $MV.Type.Cast.INT,
+                        data_type: $MV.Type.Cast.STR,
+                        pre_sort_state: $MV.Type.Cast.STR
                     },
                     
                     validators: {
-                        data_size: $MV.Validation.Validate.POSITIVE,
+                        data_size: $MV.Validation.Validate.GREATER_THAN( 0 ),
                         data_type: $MV.Validation.Validate.IN( "range", "integer-duplicates", 
                             "integer-equidistant", "integer-uniform",
                             "integer-dynamic-range", "uniform", "constant", 

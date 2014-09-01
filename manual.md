@@ -87,5 +87,5 @@ Additionaly, every operation/instruction a computer performs has an energy consu
 An efficient algorithm performs a computation by trying to use the resources in the best possible manner, so effectively uses energy in the best possible manner. 
 Where does energy come from? It comes from burning coal (mainly). 
 So there you have it, efficient code is ecological! 
-Better start learning your [complexity]( http://en.wikipedia.org/wiki/Computational_complexity_theory) soon.
+Better start learning your [complexity](http://en.wikipedia.org/wiki/Computational_complexity_theory) soon.
     
