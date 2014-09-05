@@ -103,92 +103,11 @@ Better start learning your [complexity](http://en.wikipedia.org/wiki/Computation
 
     @@USE_STRICT@@
     
-    var Sort = EXPORTS.Sort = { VERSION: "@@VERSION@@" };
+    var Sort = exports.Sort = { VERSION: "@@VERSION@@" }, undef = undefined;
     
     var root = this, FP = Function.prototype, OP = Object.prototype, AP = Array.prototype
         ,slice = FP.call.bind( AP.slice ), toString = FP.call.bind( OP.toString )
-        
-        ,isNode = Sort.isNode = "undefined" !== typeof( global ) && '[object global]' === toString( global )
-        ,isBrowser = Sort.isBrowser = !isNode && "undefined" !== typeof( navigator )
-        ,isWorker = Sort.isWorker = "function" === typeof( importScripts ) && navigator instanceof WorkerNavigator
-        ,supportsWorker = Sort.supportsWorker = "function" === typeof( Worker )
-        
-        // Get current filename/path
-        ,getPath = Sort.getPath = function( ) {
-            var file = null, scripts;
-            if ( isNode ) 
-            {
-                // http://nodejs.org/docs/latest/api/globals.html#globals_filename
-                // this should hold the current file in node
-                return { path: __dirname, file: __filename };
-            }
-            else if ( isWorker )
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/WorkerLocation
-                // this should hold the current url in a web worker
-                file = self.location.href;
-            }
-            else if ( isBrowser && (scripts = document.getElementsByTagName('script')) && scripts.length )
-            {
-                // get last script (should be the current one) in browser
-                file  = scripts[ scripts.length - 1 ].src;
-            }
-            
-            return file 
-                    ? { path: file.split('/').slice(0, -1).join('/'), file: ''+file }
-                    : { path: null, file: null }
-            ;
-        }
-        
-        ,thisPath = getPath( )
-        
-        ,notThisPath = function( path ) {
-            return path && path !== thisPath.file;
-        }
     ;
-    
-    if ( isWorker )
-    {
-        root.console = {
-            log: function(s){
-                postMessage({event: 'console.log', data: {output: s||''}});
-            },
-            error: function(s){
-                postMessage({event: 'console.error', data: {output: s||''}});
-            },
-        };
-        
-        onmessage = function( evt ) {
-            var event = evt.data.event, data = evt.data.data || null;
-            switch( event )
-            {
-                case 'init':
-                    break;
-                case 'import':
-                    if ( data && data["import"] && data["import"].length )
-                    {
-                        var imports = data["import"].filter( notThisPath );
-                        if ( imports.length ) importScripts( imports.join( ',' ) );
-                    }
-                    break;
-                case 'sort':
-                    if ( data )
-                    {
-                        var sort_data = [ ];
-                        if ( data.algorithm && Sort[data.algorithm] && data.data )
-                        {
-                            sort_data = Sort[data.algorithm]( data.data );
-                        }
-                        postMessage({event: 'sort', data: sort_data });
-                    }
-                    break;
-                case 'dispose':
-                default:
-                    close( );
-                    break;
-            }
-        };        
-    }
     
     //
     //
