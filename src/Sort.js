@@ -103,7 +103,7 @@ Better start learning your [complexity](http://en.wikipedia.org/wiki/Computation
 
     @@USE_STRICT@@
     
-    var Sort = exports.Sort = { VERSION: "@@VERSION@@" }, undef = undefined;
+    var Sort = exports['@@MODULE_NAME@@'] = { VERSION: "@@VERSION@@" }, undef = undefined;
     
     var root = this, FP = Function.prototype, OP = Object.prototype, AP = Array.prototype
         ,slice = FP.call.bind( AP.slice ), toString = FP.call.bind( OP.toString )
