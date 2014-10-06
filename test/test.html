@@ -11,581 +11,614 @@
 <!--[if gt IE 8]><!-->
 <html lang="en" class="no-ie">
 <!--<![endif]-->
-    <head>
-        <title>Sorting Algorithms Tests</title>
-        
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <meta name="description" content="Sorting Algorithms Tests" />
-        
-        
-        <link rel="stylesheet" type="text/css" href="./css/common.min.css" />
-        
-    <style type="text/css">
-        body {
-            background-color:#121212;
-            color:#aaa;
-            position:relative;
-        }
-        .showcase {
-            margin:5px 2px;
-            color:white;
-            font-style:italic;
-            font-size:0.8em;
-        }
-        .showcase a{
-            color:#f90b13;
-            display:inline-block;
-            margin-bottom:1px;
-            text-decoration:none;
-            border-bottom:1px dotted #f90b13;
-        }
-        .showcase a:hover, 
-        .showcase a:active, 
-        .showcase a:visited{
-            text-decoration:none;
-        }
-        #footer {
-            margin-top: 20px;
-        }
-        .button {
-            -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-            -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-            box-shadow:inset 0px 1px 0px 0px #ffffff;
-            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-            background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-            background-color:#ededed;
-            -webkit-border-top-left-radius:20px;
-            -moz-border-radius-topleft:20px;
-            border-top-left-radius:20px;
-            -webkit-border-top-right-radius:20px;
-            -moz-border-radius-topright:20px;
-            border-top-right-radius:20px;
-            -webkit-border-bottom-right-radius:20px;
-            -moz-border-radius-bottomright:20px;
-            border-bottom-right-radius:20px;
-            -webkit-border-bottom-left-radius:20px;
-            -moz-border-radius-bottomleft:20px;
-            border-bottom-left-radius:20px;
-            text-indent:0;
-            border:1px solid #dcdcdc;
-            display:inline-block;
-            color:#777777;
-            font-family:Arial;
-            font-size:15px;
-            font-weight:bold;
-            font-style:normal;
-            height:50px;
-            line-height:50px;
-            width:86px;
-            text-decoration:none;
-            text-align:center;
-            text-shadow:1px 1px 0px #ffffff;
-        }
-        .button:hover {
-            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
-            background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
-            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-            background-color:#dfdfdf;
-        }.button:active {
-            position:relative;
-            top:1px;
-        }
-        .button {
-            width:90px;
-            height:30px;
-            line-height:30px;
-            cursor:pointer;
-            position:relative;
-        }
-        #console {
-            border: 1px solid #aaa;
-            background:#efefef; 
-            color:#121212; 
-            min-height:300px;
-            padding:20px;
-        }
-        .loader {
-            display: inline-block;
-            width:20px;
-            height:20px;
-            background: transparent url(./css/ajax-loader.gif) 0 0 no-repeat;
-        }
-        .cont {
-            margin-top: 8px;
-            margin-bottom: 20px;
-        }
-        .algo_info strong {
-            font-size: 14px;
-        }
-        .algo_info a {
-            font-size: 12px;
-        }
-        .algo_info i {
-            font-size: 12px;
-        }
-        #forkongithub a{background:#aa0000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:0.9rem;line-height:1.4rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#aa0000;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;z-index:100;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;z-index:100;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}
-    </style>
-
-        
+    <title>Sorting Algorithms Tests</title>
     
-        
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Sorting Algorithms Tests" />
+    
+    
+    <link rel="stylesheet" type="text/css" href="./css/common.min.css" />
+    
+<style type="text/css">
+body {
+    background-color:#121212;
+    color:#aaa;
+    position:relative;
+}
+.showcase {
+    margin:5px 2px;
+    color:white;
+    font-style:italic;
+    font-size:0.8em;
+}
+.showcase a{
+    color:#f90b13;
+    display:inline-block;
+    margin-bottom:1px;
+    text-decoration:none;
+    border-bottom:1px dotted #f90b13;
+}
+.showcase a:hover, 
+.showcase a:active, 
+.showcase a:visited{
+    text-decoration:none;
+}
+#footer {
+    margin-top: 20px;
+}
+.button {
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+    background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+    background-color:#ededed;
+    -webkit-border-top-left-radius:20px;
+    -moz-border-radius-topleft:20px;
+    border-top-left-radius:20px;
+    -webkit-border-top-right-radius:20px;
+    -moz-border-radius-topright:20px;
+    border-top-right-radius:20px;
+    -webkit-border-bottom-right-radius:20px;
+    -moz-border-radius-bottomright:20px;
+    border-bottom-right-radius:20px;
+    -webkit-border-bottom-left-radius:20px;
+    -moz-border-radius-bottomleft:20px;
+    border-bottom-left-radius:20px;
+    text-indent:0;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#777777;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+    height:50px;
+    line-height:50px;
+    width:86px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #ffffff;
+}
+.button:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+    background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+    background-color:#dfdfdf;
+}.button:active {
+    position:relative;
+    top:1px;
+}
+.button {
+    width:90px;
+    height:30px;
+    line-height:30px;
+    cursor:pointer;
+    position:relative;
+}
+#console {
+    border: 1px solid #aaa;
+    background:#efefef; 
+    color:#121212; 
+    min-height:300px;
+    padding:20px;
+}
+.loader {
+    display: inline-block;
+    width:20px;
+    height:20px;
+    background: transparent url(./css/ajax-loader.gif) 0 0 no-repeat;
+}
+.cont {
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+.algo_info strong {
+    font-size: 14px;
+}
+.algo_info a {
+    font-size: 12px;
+}
+.algo_info i {
+    font-size: 12px;
+}
+#console.processing > #loader { display: inline-block; }
+#console.processing > #result { display: none; }
+#console:not(.processing) > #loader { display: none; }
+#console:not(.processing) > #result { display: block; }
+
+#forkongithub a{background:#aa0000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:0.9rem;line-height:1.4rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#aa0000;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;z-index:100;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;z-index:100;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}
+</style>
+
         <script type="text/javascript" src="./js/jquery.js"></script>
         <script type="text/javascript" src="./js/mvc.bundle.js"></script>
-        
     <script type="text/javascript" src="./js/sort.min.js"></script>
-    
-    <script type="text/x-contemplate" id="algorithm-info">
-        <# #>
-        <strong>Selected Algorithm: <# $algo #></strong>
-        <br /><br />
-        <strong>Reference Link:</strong> <a href="<# $reflink #>" target="_blank"><# $reflink #></a>
-        <br /><br />
-        <strong>Summary:</strong> <i><# $desc #></i></div>
-        <br /><br />
-    </script>
-    <script type="text/x-contemplate" id="test-results">
-        <# #>
-        <# %if( $showData ) #>
-        Original: <# $a #><br />
-        Result: <# $asorted #><br />
-        <br /><br />
-        <# %endif() #>
-        <strong>Time Taken = <# $tms #> (ms)</strong>
-        <br /><br />
-        <i>Reality Check:</i> Result is &nbsp;&nbsp;
-        <# %if( $isSorted ) #>
-        <span style="color:green;font-weight:bold;font-size:20px;">&#10003;&nbsp;&nbsp;</span><strong>SORTED</strong>
-        <# %else() #>
-        <span style="color:red;font-weight:bold;font-size:20px;">&#10060;&nbsp;&nbsp;</span><strong>NOT SORTED</strong>
-        <# %endif() #>
-        <br /><br />
-    </script>
-
-        
-    
     </head>
     
-    <body>
-        <span id="forkongithub"><a href="https://github.com/foo123/SortingAlgorithms">Check me out on GitHub</a></span>
-        
-        
-    <header id="header" class="fluid col-1-1">
-        <h1>Sorting Algorithms Tests</h1>
-    </header>
+<body>
+    <span id="forkongithub"><a href="https://github.com/foo123/SortingAlgorithms">Check me out on GitHub</a></span>
     
-    <br />
+    
+<header id="header" class="fluid col-1-1">
+    <h1>Sorting Algorithms Tests</h1>
+</header>
 
-        
-        
+<br />
+
+    
+    
 <section id="panel" class="fluid col-1-1" style="padding: 20px;">
+<div id="controls" class="fluid col-1-4">
+    <strong>Select Sorting Algorithm: </strong><br />
+    <div class="cont"><select name="model[algorithm][selected]">
+        <optgroup label="Comparison-based:">
+            <option value="BuiltinSort">BuiltinSort</option>
+            <option value="BubbleSort">BubbleSort</option>
+            <option value="CocktailSort">CocktailSort</option>
+            <option value="ShellSort">ShellSort</option>
+            <option value="HeapSort">HeapSort</option>
+            <option value="InsertionSort">InsertionSort</option>
+            <option value="CycleSort">CycleSort</option>
+            <option value="LibrarySort">LibrarySort</option>
+            <option value="RecursiveMergeSort">RecursiveMergeSort</option>
+            <option value="MergeSort">MergeSort</option>
+            <option value="RecursiveQuickSort">RecursiveQuickSort</option>
+            <option value="QuickSort">QuickSort</option>
+            <option value="TimSort">TimSort</option>
+        </optgroup>
+        <optgroup label="Arithmetic-based:">
+            <option value="PermutationSort (custom)">PermutationSort (custom)</option>
+            <option value="IndexSort (custom)">IndexSort (custom)</option>
+            <option value="CountingSort">CountingSort</option>
+            <option value="BucketSort with InsertionSort">BucketSort with InsertionSort</option>
+            <option value="BucketSort with QuickSort">BucketSort with QuickSort</option>
+            <option value="BucketSort with IndexSort">BucketSort with IndexSort</option>
+            <!--<option value="StatisticalSort (custom)">StatisticalSort (custom)</option>-->
+        </optgroup>
+    </select></div> 
     
-    <div id="controls" class="fluid col-1-4">
-        <strong>Select Sorting Algorithm: </strong><br />
-        <div class="cont">
-            <select name="model[sorting_algorithm]">
-                <optgroup label="Comparison-based:">
-                    <option value="BuiltinSort">BuiltinSort</option>
-                    <option value="BubbleSort">BubbleSort</option>
-                    <option value="CocktailSort">CocktailSort</option>
-                    <option value="ShellSort">ShellSort</option>
-                    <option value="HeapSort">HeapSort</option>
-                    <option value="InsertionSort">InsertionSort</option>
-                    <option value="CycleSort">CycleSort</option>
-                    <option value="LibrarySort">LibrarySort</option>
-                    <option value="RecursiveMergeSort">RecursiveMergeSort</option>
-                    <option value="MergeSort">MergeSort</option>
-                    <option value="RecursiveQuickSort">RecursiveQuickSort</option>
-                    <option value="QuickSort">QuickSort</option>
-                    <option value="TimSort">TimSort</option>
-                </optgroup>
-                <optgroup label="Arithmetic-based:">
-                    <option value="PermutationSort (custom)">PermutationSort (custom)</option>
-                    <option value="IndexSort (custom)">IndexSort (custom)</option>
-                    <option value="CountingSort">CountingSort</option>
-                    <option value="BucketSort with InsertionSort">BucketSort with InsertionSort</option>
-                    <option value="BucketSort with QuickSort">BucketSort with QuickSort</option>
-                    <option value="BucketSort with IndexSort">BucketSort with IndexSort</option>
-                    <!--<option value="StatisticalSort (custom)">StatisticalSort (custom)</option>-->
-                </optgroup>
-            </select>
-        </div> 
-        
-        <strong>Select Data Size: </strong><br />
-        <div class="cont">
-            <select name="model[data_size]">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="500">500</option>
-                <option value="1000">1000</option>
-                <option value="2000">2000</option>
-                <option value="5000">5000</option>
-                <option value="10000">10000</option>
-                <option value="20000">20000</option>
-                <option value="50000">50000</option>
-                <option value="100000">100000</option>
-                <option value="200000">200000</option>
-            </select>
-        </div>                                
-        
-        <strong>Select Data Type: </strong><br />
-        <div class="cont">
-            <select name="model[data_type]">
-                <optgroup label="Integers:">
-                    <option value="range">Integer Range [0, N-1]</option>
-                    <option value="integer-duplicates">Groups of Integer Duplicates</option>
-                    <option value="integer-equidistant">Equidistant Integers</option>
-                    <option value="integer-uniform">Uniform Integers</option>
-                    <option value="integer-dynamic-range">Variable Dynamic Range Integers</option>
-                </optgroup>
-                <optgroup label="Numbers:">
-                    <option value="uniform">Numbers in [0, 1]</option>
-                    <option value="constant">All Duplicates</option>
-                    <option value="duplicates">Groups of Duplicates</option>
-                    <option value="number-equidistant-01">Equidistant Numbers in [0,1]</option>
-                    <option value="number-equidistant">Equidistant Numbers</option>
-                    <option value="number-uniform">Uniform Numbers</option>
-                    <option value="number-dynamic-range">Variable Dynamic Range Numbers</option>
-                </optgroup>
-            </select>
-        </div>                                
-        
-        <strong>Select pre-sort state: </strong><br />
-        <div class="cont">
-            <select name="model[pre_sort_state]">
-                <option value="sorted">Sorted</option>
-                <option value="reverse-sorted">Reverse Sorted</option>
-                <option value="shuffled">Shuffled</option>
-            </select>
-        </div>                                
-        
-        <input id="test" type="button" class="button" 
-            value="Run Test" data-bind='{"click":"test"}' />
-        <br /><br />
-    </div>
+    <strong>Select Data Size: </strong><br />
+    <div class="cont"><select name="model[algorithm][data_size]">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="500">500</option>
+        <option value="1000">1000</option>
+        <option value="2000">2000</option>
+        <option value="5000">5000</option>
+        <option value="10000">10000</option>
+        <option value="20000">20000</option>
+        <option value="50000">50000</option>
+        <option value="100000">100000</option>
+        <option value="200000">200000</option>
+    </select></div>                                
     
-    <div class="fluid col-2-3">
-        <strong>Console: </strong> <br />
-        <div id="console" class="fluid col-1-1">
-            <div class="algo_info" data-bind='{"html":"algorithmInfo"}'></div>
-            <div id="result" data-bind='{"html":"testResults"}'></div>
+    <strong>Select Data Type: </strong><br />
+    <div class="cont"><select name="model[algorithm][data_type]">
+        <optgroup label="Integers:">
+            <option value="range">Integer Range [0, N-1]</option>
+            <option value="integer-duplicates">Groups of Integer Duplicates</option>
+            <option value="integer-equidistant">Equidistant Integers</option>
+            <option value="integer-uniform">Uniform Integers</option>
+            <option value="integer-dynamic-range">Variable Dynamic Range Integers</option>
+        </optgroup>
+        <optgroup label="Numbers:">
+            <option value="uniform">Numbers in [0, 1]</option>
+            <option value="constant">All Duplicates</option>
+            <option value="duplicates">Groups of Duplicates</option>
+            <option value="number-equidistant-01">Equidistant Numbers in [0,1]</option>
+            <option value="number-equidistant">Equidistant Numbers</option>
+            <option value="number-uniform">Uniform Numbers</option>
+            <option value="number-dynamic-range">Variable Dynamic Range Numbers</option>
+        </optgroup>
+    </select></div>                                
+    
+    <strong>Select pre-sort state: </strong><br />
+    <div class="cont"><select name="model[algorithm][pre_sort_state]">
+        <option value="sorted">Sorted</option>
+        <option value="reverse-sorted">Reverse Sorted</option>
+        <option value="shuffled">Shuffled</option>
+    </select></div>                                
+    
+    <input id="test" type="button" class="button" 
+        value="Run Test" data-bind='{"click":"test"}' />
+    <br /><br />
+</div>
+
+<div class="fluid col-2-3">
+    <strong>Console: </strong> <br />
+    <div id="console" class="fluid col-1-1">
+        <div class="algo_info">
+            <strong>Selected Algorithm: $(algorithm.name)</strong>
+            <br /><br />
+            <strong>Reference Link:</strong> <a href="$(algorithm.reflink)" target="_blank">$(algorithm.reflink)</a>
+            <br /><br />
+            <strong>Summary:</strong> <i data-bind='{"html":"algorithm.desc"}'></i>
+            <br /><br />
+        </div>
+        <div id="loader" class="loader"></div>
+        <div id="result">
+            <div style="display:none" data-bind='{"show":"result.showData"}'>
+                Original: $(result.original)<br />
+                Result: $(result.sorted)<br />
+                <br /><br />
+            </div>
+            <strong>Time Taken = $(result.tms) (ms)</strong>
+            <br /><br />
+            <i>Reality Check:</i> Result is &nbsp;&nbsp;
+            <span data-bind='{"show":"result.isSorted"}'>
+                <span style="color:green;font-weight:bold;font-size:20px;">&#10003;&nbsp;&nbsp;</span>
+                <strong>SORTED</strong>
+            </span>
+            <span data-bind='{"hide":"result.isSorted"}'>
+                <span style="color:red;font-weight:bold;font-size:20px;">&#10060;&nbsp;&nbsp;</span>
+                <strong>NOT SORTED</strong>
+            </span>
+            <br /><br />
         </div>
     </div>
-    
+</div>
 </section>
 <br />
 
-        
-        
-<footer id="footer">
-    <div class="fluid col-1-1 text-right" style="margin-top: 10px; padding-right: 20px;"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DP8WED9XW9TAE" class="donate">donate</a> or <a href="http://nikos-web-development.netai.net" class="donate">hire me for a job</a></div>
     
     
-    <div class="showcase">DOM abstraction by <a href="http://jquery.com/" target="_blank">jQuery</a></div>
-    <div class="showcase">Templating by <a href="https://github.com/foo123/Contemplate" target="_blank">Contemplate</a></div>
-    <div class="showcase">Routing by <a href="https://github.com/foo123/Dromeo" target="_blank">Dromeo</a></div>
-    <div class="showcase">MVC by <a href="https://github.com/foo123/modelview.js" target="_blank">ModelView</a></div>
-</footer>
-<br /><br />
-
+    <footer id="footer">
+        <div class="fluid col-1-1 text-right" style="margin-top: 10px; padding-right: 20px;"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DP8WED9XW9TAE" class="donate">donate</a> or <a href="http://nikos-web-development.netai.net" class="donate">hire me for a job</a></div>
         
         
-    <script type="text/javascript">//<![CDATA[
-        !function( window, $, $T, $R, $MV, $S, undef ) {
-            "use strict";
-            
-            var $window = $(window), $panel = $('#panel'), 
-                appRouter, appView, appModel,
-                RI = $S.utils.RandomInteger, RF = $S.utils.Uniform
-            ;
-                
-            // some extra array methods used in the tests
-            Array.prototype.nsort = function() { return this.sort($S.utils.asNumbers); }
-            Array.prototype.shuffle = function() { return $S.Shuffle(this); }
-            Array.prototype.isSorted = function() { return $S.isSorted(this, true); }
-            Array.prototype.toString = function() { return '[ ' + this.join(', ') + ' ]'; }
-                
-            // prepare test data
-            function prepareTestData($S, N, dtype, stype)
-            {
-                var a, m, M, inc, cut;
-                
-                if ( 'constant' == dtype )
-                {
-                    a = $S.utils.Constant(N, RF(-100, 100));
-                }
-                else if ( 'integer-duplicates' == dtype )
-                {
-                    inc = RI(1, 500)
-                    cut = ~~(RI(N/8, N/2));
-                    a = $S.utils.Duplicates(N, inc, cut);
-                }
-                else if ( 'duplicates' == dtype )
-                {
-                    inc = RF(1, 500)
-                    cut = ~~(RI(N/8, N/2));
-                    a = $S.utils.Duplicates(N, inc, cut);
-                }
-                else if ( 'integer-equidistant' == dtype )
-                {
-                    m = RI(-100, 100);
-                    M = RI(1000, 10000);
-                    inc = RI(1, 500)
-                    a = $S.utils.Equidistant(N, m, M, inc);
-                }
-                else if ( 'integer-uniform' == dtype )
-                {
-                    m = RI(-100, 100);
-                    M = RI(1000, 10000);
-                    a = $S.utils.IntegerEquidistributable(N, m, M);
-                }
-                else if ( 'uniform' == dtype )
-                {
-                    a = $S.utils.NumberEquidistributable(N, 0, 1);
-                }
-                else if ( 'number-equidistant-01' == dtype )
-                {
-                    a = $S.utils.Equidistant(N, 0, 1, 1/N);
-                }
-                else if ( 'number-equidistant' == dtype )
-                {
-                    m = RF(-100, 100);
-                    M = RF(1000, 10000);
-                    inc = RF(1, 500)
-                    a = $S.utils.Equidistant(N, m, M, inc);
-                }
-                else if ( 'number-uniform' == dtype )
-                {
-                    m = RF(-100.1, 100.2);
-                    M = RF(1000.1, 10000.3);
-                    a = $S.utils.NumberEquidistributable(N, m, M);
-                }
-                else if ( 'integer-dynamic-range' == dtype )
-                {
-                    m = RI(-100, 100);
-                    M = RI(1000, 10000);
-                    inc = RI(100, 5000);
-                    cut = ~~(RI(N/8, N/2));
-                    a = $S.utils.IntegerDynamicRange(N, m, M,inc, cut);
-                }
-                else if ( 'number-dynamic-range' == dtype )
-                {
-                    m = RF(-100.4, 100.3);
-                    M = RF(1000.2, 10000.4);
-                    inc = RF(100, 5000);
-                    cut = ~~(RI(N/8, N/2));
-                    a = $S.utils.NumberDynamicRange(N, m, M, inc, cut);
-                }
-                else
-                {
-                    // integer-range
-                    a = $S.utils.Range(N);
-                }
-                
-                
-                if (
-                    ('integer-uniform' == dtype ||
-                    'number-uniform' == dtype || 
-                    'uniform' == dtype || 
-                    'integer-dynamic-range' == dtype || 
-                    'number-dynamic-range' == dtype)
-                        && 
-                    ('sorted' == stype || 'reverse-sorted' == stype)
-                )
-                {
-                    a.nsort();
-                }
-                
-                // reverse-sorted
-                if ( 'reverse-sorted' == stype )
-                {
-                    a.reverse( );
-                }
-                // shuffled
-                else if ( 'shuffled' == stype )
-                {
-                    a.shuffle( );
-                }
-                // sorted, leave as is
-                else { }
-                
-                return a;
-            }
-            
-            function doTest( )
-            {
-                //
-                // get selected sorting algorithm
-                //
-                var model = appModel,
-                    selectedAlgorithm, sortingFunction,  reflink, desc,
-                    stype, dtype, N, a, asorted, args = []
-                ;
-                
-                N = model.get('data_size');
-                
-                stype = model.get('pre_sort_state');
-                
-                dtype = model.get('data_type');
-                
-                selectedAlgorithm = model.get('sorting_algorithm');
-                
-                if ( 'BucketSort with QuickSort' === selectedAlgorithm )
-                {
-                    selectedAlgorithm = 'BucketSort';
-                    args.push( $S.QuickSort );
-                }
-                else if ( 'BucketSort with IndexSort' === selectedAlgorithm )
-                {
-                    selectedAlgorithm = 'BucketSort';
-                    args.push( $S.IndexSort );
-                }
-                else if ( 0 === selectedAlgorithm.indexOf('BucketSort') )
-                {
-                    selectedAlgorithm = 'BucketSort';
-                }
-                else if ( 0 === selectedAlgorithm.indexOf('PermutationSort') )
-                {
-                    selectedAlgorithm = 'PermutationSort';
-                }
-                else if ( 0 === selectedAlgorithm.indexOf('IndexSort') )
-                {
-                    selectedAlgorithm = 'IndexSort';
-                }
-                else if ( 0 === selectedAlgorithm.indexOf('StatisticalSort') )
-                {
-                    selectedAlgorithm = 'StatisticalSort';
-                }
-                sortingFunction = $S[selectedAlgorithm];
-                
-                model.set('algorithmInfo', $T.tpl('algorithm-info', {
-                    'algo': selectedAlgorithm,
-                    'reflink': sortingFunction.reference || '#',
-                    'desc': sortingFunction.description || ''
-                }), true);
-                
-                model.set('testResults', '<div class="loader"></div>', true);
-                
-                //
-                // prepare test data
-                //
-                a = prepareTestData( $S, N, dtype, stype );
-                
-                //
-                // do the sorting test
-                //
-                asorted = a.slice( );
-                args.unshift( asorted );
-                
-                setTimeout(function(){
-                    $S.vTime(function( tms ) {
-                    
-                        //
-                        // show results
-                        //
-                        model.set('testResults', $T.tpl('test-results', {
-                                showData: ( N < 50 ),
-                                isSorted: asorted.isSorted( ),
-                                a: a,
-                                asorted: asorted,
-                                tms: tms
-                            }), true);
+<div class="showcase">DOM abstraction by <a href="http://jquery.com/" target="_blank">jQuery</a></div>
 
-                    }, sortingFunction, args)
-                }, 40);
-            }
+        <div class="showcase">Module management by <a href="http://requirejs.org/" target="_blank">RequireJS</a></div>
+        <div class="showcase">Templating by <a href="https://github.com/foo123/Contemplate" target="_blank">Contemplate</a></div>
+        <div class="showcase">Routing by <a href="https://github.com/foo123/Dromeo" target="_blank">Dromeo</a></div>
+        <div class="showcase">MVC by <a href="https://github.com/foo123/modelview.js" target="_blank">ModelView</a></div>
+    </footer>
+    <br /><br />
+    
+    
+    
+<script type="text/javascript">//<![CDATA[
+!function( $, $T, $R, $MV, $S, undef ) {
+    "use strict";
+    
+    var $window = $(window), $panel = $('#panel'), $console = $('#console'),
+        appRouter, appView, appModel,
+        RI = $S.utils.RandomInteger, RF = $S.utils.Uniform
+    ;
+        
+    $MV.jquery( $ );
+    
+    // some extra array methods used in the tests
+    Array.prototype.nsort = function() { return this.sort($S.utils.asNumbers); }
+    Array.prototype.shuffle = function() { return $S.Shuffle(this); }
+    Array.prototype.isSorted = function() { return $S.isSorted(this, true); }
+    Array.prototype.toString = function() { return '[ ' + this.join(', ') + ' ]'; }
+        
+    // prepare test data
+    function prepareTestData($S, N, dtype, stype)
+    {
+        var a, m, M, inc, cut;
+        
+        if ( 'constant' == dtype )
+        {
+            a = $S.utils.Constant(N, RF(-100, 100));
+        }
+        else if ( 'integer-duplicates' == dtype )
+        {
+            inc = RI(1, 500)
+            cut = ~~(RI(N/8, N/2));
+            a = $S.utils.Duplicates(N, inc, cut);
+        }
+        else if ( 'duplicates' == dtype )
+        {
+            inc = RF(1, 500)
+            cut = ~~(RI(N/8, N/2));
+            a = $S.utils.Duplicates(N, inc, cut);
+        }
+        else if ( 'integer-equidistant' == dtype )
+        {
+            m = RI(-100, 100);
+            M = RI(1000, 10000);
+            inc = RI(1, 500)
+            a = $S.utils.Equidistant(N, m, M, inc);
+        }
+        else if ( 'integer-uniform' == dtype )
+        {
+            m = RI(-100, 100);
+            M = RI(1000, 10000);
+            a = $S.utils.IntegerEquidistributable(N, m, M);
+        }
+        else if ( 'uniform' == dtype )
+        {
+            a = $S.utils.NumberEquidistributable(N, 0, 1);
+        }
+        else if ( 'number-equidistant-01' == dtype )
+        {
+            a = $S.utils.Equidistant(N, 0, 1, 1/N);
+        }
+        else if ( 'number-equidistant' == dtype )
+        {
+            m = RF(-100, 100);
+            M = RF(1000, 10000);
+            inc = RF(1, 500)
+            a = $S.utils.Equidistant(N, m, M, inc);
+        }
+        else if ( 'number-uniform' == dtype )
+        {
+            m = RF(-100.1, 100.2);
+            M = RF(1000.1, 10000.3);
+            a = $S.utils.NumberEquidistributable(N, m, M);
+        }
+        else if ( 'integer-dynamic-range' == dtype )
+        {
+            m = RI(-100, 100);
+            M = RI(1000, 10000);
+            inc = RI(100, 5000);
+            cut = ~~(RI(N/8, N/2));
+            a = $S.utils.IntegerDynamicRange(N, m, M,inc, cut);
+        }
+        else if ( 'number-dynamic-range' == dtype )
+        {
+            m = RF(-100.4, 100.3);
+            M = RF(1000.2, 10000.4);
+            inc = RF(100, 5000);
+            cut = ~~(RI(N/8, N/2));
+            a = $S.utils.NumberDynamicRange(N, m, M, inc, cut);
+        }
+        else
+        {
+            // integer-range
+            a = $S.utils.Range(N);
+        }
+        
+        
+        if (
+            ('integer-uniform' == dtype ||
+            'number-uniform' == dtype || 
+            'uniform' == dtype || 
+            'integer-dynamic-range' == dtype || 
+            'number-dynamic-range' == dtype)
+                && 
+            ('sorted' == stype || 'reverse-sorted' == stype)
+        )
+        {
+            a.nsort();
+        }
+        
+        // reverse-sorted
+        if ( 'reverse-sorted' == stype )
+        {
+            a.reverse( );
+        }
+        // shuffled
+        else if ( 'shuffled' == stype )
+        {
+            a.shuffle( );
+        }
+        // sorted, leave as is
+        else { }
+        
+        return a;
+    }
+    
+    function doTest( model )
+    {
+        //console.log('doTest');
+        
+        //
+        // get selected sorting algorithm
+        //
+        var selectedAlgorithm, sortingFunction,  reflink, desc,
+            showData, stype, dtype, N, a, asorted, tms, args = [ ]
+        ;
+        
+        N = model.get('algorithm.data_size');
+        stype = model.get('algorithm.pre_sort_state');
+        dtype = model.get('algorithm.data_type');
+        selectedAlgorithm = model.get('algorithm.selected');
+        
+        if ( 'BucketSort with QuickSort' === selectedAlgorithm )
+        {
+            selectedAlgorithm = 'BucketSort';
+            args.push( $S.QuickSort );
+        }
+        else if ( 'BucketSort with IndexSort' === selectedAlgorithm )
+        {
+            selectedAlgorithm = 'BucketSort';
+            args.push( $S.IndexSort );
+        }
+        else if ( 0 === selectedAlgorithm.indexOf('BucketSort') )
+        {
+            selectedAlgorithm = 'BucketSort';
+        }
+        else if ( 0 === selectedAlgorithm.indexOf('PermutationSort') )
+        {
+            selectedAlgorithm = 'PermutationSort';
+        }
+        else if ( 0 === selectedAlgorithm.indexOf('IndexSort') )
+        {
+            selectedAlgorithm = 'IndexSort';
+        }
+        else if ( 0 === selectedAlgorithm.indexOf('StatisticalSort') )
+        {
+            selectedAlgorithm = 'StatisticalSort';
+        }
+        sortingFunction = $S[selectedAlgorithm];
+        
+        $console.addClass('processing');
+        model.set('algorithm.name', selectedAlgorithm, 1);
+        model.set('algorithm.reflink', sortingFunction.reference || '#', 1);
+        model.set('algorithm.desc', sortingFunction.description || '', 1);
+        
+        //
+        // prepare test data
+        //
+        a = prepareTestData( $S, N, dtype, stype );
+        
+        //
+        // do the sorting test
+        //
+        asorted = a.slice( );
+        args.unshift( asorted );
+        showData = ( N < 50 );
+        setTimeout(function( ){
+            $S.vTime(function( tms ) {
             
-            // templates defined in the dom
-            $T.add({
-                'algorithm-info' : '#algorithm-info',
-                'test-results' : '#test-results'
-            });
+                //
+                // show results
+                //
+                model.set('result', {
+                        showData: showData,
+                        isSorted: asorted.isSorted( ),
+                        original: showData ? a.toString( ) : '',
+                        sorted: showData ? asorted.toString( ) : '',
+                        tms: tms
+                    }, 1);
+                $console.removeClass('processing');
+            }, sortingFunction, args)
+        }, 40);
+        
+        /*new Benchmark.Suite( )
+            // add tests
+            .add(selectedAlgorithm, function( ){ sortingFunction.apply( {}, args ); })
             
-            $panel.modelview({
-                
-                id: 'SortingAlgorithmsPanel',
-                
-                autobind: true,
-                events: ['change', 'click'],
-                
-                model: {
-                    id: 'model',
-                    
-                    data: {
-                        sorting_algorithm: 'BuiltinSort',
-                        data_size: 5,
-                        data_type: 'range',
-                        pre_sort_state: 'shuffled',
-                        algorithmInfo: '',
-                        testResults: ''
-                    },
-                    
-                    types: {
-                        sorting_algorithm: $MV.Type.Cast.STR,
-                        data_size: $MV.Type.Cast.INT,
-                        data_type: $MV.Type.Cast.STR,
-                        pre_sort_state: $MV.Type.Cast.STR
-                    },
-                    
-                    validators: {
-                        data_size: $MV.Validation.Validate.GREATER_THAN( 0 ),
-                        data_type: $MV.Validation.Validate.IN( "range", "integer-duplicates", 
-                            "integer-equidistant", "integer-uniform",
-                            "integer-dynamic-range", "uniform", "constant", 
-                            "duplicates", "number-equidistant-01", 
-                            "number-equidistant", "number-uniform", "number-dynamic-range" ),
-                        pre_sort_state: $MV.Validation.Validate.IN( 'sorted', 'reverse-sorted', 'shuffled' )
-                    }
+            // add listeners
+            .on('start', function( ) {
+                console.log([
+                    'Benchmark Suite:',
+                    'Algorithm='+selectedAlgorithm,
+                    'DataSize='+N,
+                    'DataType='+dtype,
+                    'Presorted='+stype
+                ].join(' '));
+            })
+            /*.on('cycle', function( e ) {
+                console.log( e );
+            })* /
+            .on('complete', function( ) {
+                alert('complete');
+                return;
+                //
+                // show results
+                //
+                model.set('testResults', $T.tpl('test-results', {
+                        showData: ( N < 50 ),
+                        isSorted: asorted.isSorted( ),
+                        a: a,
+                        asorted: asorted,
+                        tms: tms
+                    }), true);
+            })
+            // run async
+            .run( {async:true} )
+        ;*/
+    }
+    
+    $panel.modelview({
+        
+        id: 'SortingAlgorithmsPanel',
+        
+        livebind: '$(__KEY__)',
+        autobind: true,
+        events: ['change', 'click'],
+        autoSync: false,
+        
+        model: {
+            id: 'model',
+            
+            data: {
+                algorithm: {
+                    selected: 'BuiltinSort',
+                    data_size: 5,
+                    data_type: 'range',
+                    pre_sort_state: 'shuffled',
+                    name: '',
+                    reflink: '#',
+                    desc: ''
                 },
-                
-                actions: {
-                    test: function( evt, $el, data ) {
-                        location.hash = '#' + appRouter.glue({
-                            action: 'test',
-                            sorting_algorithm: appModel.get('sorting_algorithm'),
-                            data_size: '' + appModel.get('data_size'),
-                            data_type: appModel.get('data_type'),
-                            pre_sort_state: appModel.get('pre_sort_state'),
-                            r: new Date().getTime()
-                        });
-                        //doTest( );
-                    }
+                result: {
+                    showData: false,
+                    isSorted: true,
+                    original: '',
+                    sorted: '',
+                    tms: 0
                 }
-            });
+            },
             
-            appView = $panel.modelview('view');
-            appModel = appView.model( );
-            appRouter = new $R( );
-            $panel.modelview('sync');
-            
-            appRouter.on('#{%ALL%:hash}', function( route, params ) {
-                params = params && params.hash ? appRouter.extract( params.hash ) : null;
-                if ( params && params.action && 'test' === params.action )
-                {
-                    if ( undef !== params.sorting_algorithm )
-                        appModel.set('sorting_algorithm', params.sorting_algorithm, 1 );
-                    if ( undef !== params.data_size )
-                        appModel.set('data_size', params.data_size, 1 );
-                    if ( undef !== params.data_type )
-                        appModel.set('data_type', params.data_type, 1 );
-                    if ( undef !== params.pre_sort_state )
-                        appModel.set('pre_sort_state', params.pre_sort_state, 1 );
-                    doTest( );
+            types: {
+                algorithm: {
+                    selected: $MV.Type.Cast.STR,
+                    name: $MV.Type.Cast.STR,
+                    reflink: $MV.Type.Cast.STR,
+                    desc: $MV.Type.Cast.STR,
+                    data_size: $MV.Type.Cast.INT,
+                    data_type: $MV.Type.Cast.STR,
+                    pre_sort_state: $MV.Type.Cast.STR
                 }
-            });
-            $window.on('hashchange', function( evt ) {
-                appRouter.route( location.hash );
-            }).trigger( 'hashchange' );
+            },
             
-        }( window, jQuery, Contemplate, Dromeo, ModelView, Sort );
+            validators: {
+                algorithm: {
+                    data_size: $MV.Validation.Validate.GREATER_THAN(0),
+                    data_type: $MV.Validation.Validate.IN( "range", "integer-duplicates", 
+                        "integer-equidistant", "integer-uniform",
+                        "integer-dynamic-range", "uniform", "constant", 
+                        "duplicates", "number-equidistant-01", 
+                        "number-equidistant", "number-uniform", "number-dynamic-range" ),
+                    pre_sort_state: $MV.Validation.Validate.IN( 'sorted', 'reverse-sorted', 'shuffled' )
+                }
+            }
+        },
         
-    //]]></script>
+        actions: {
+            test: function( evt, $el, data ) {
+                var model = this.$model, algoInfo = model.get('algorithm');
+                location.hash = '#' + appRouter.glue({
+                    action: 'test',
+                    sorting_algorithm: algoInfo.selected,
+                    data_size: '' + algoInfo.data_size,
+                    data_type: algoInfo.data_type,
+                    pre_sort_state: algoInfo.pre_sort_state,
+                    r: new Date( ).getTime( )
+                });
+                //doTest( model );
+            }
+        }
+    });
+    appView = $panel.modelview('view');
+    appModel = appView.$model;
+    appRouter = new $R( );
+    $panel.modelview('sync');
+    
+    appRouter.on('#{%ALL%:hash}', function( route, params ) {
+        params = params && params.hash ? appRouter.unglue( params.hash ) : null;
+        if ( params && params.action && 'test' === params.action )
+        {
+            if ( undef !== params.sorting_algorithm )
+                appModel.set( 'algorithm.selected', params.sorting_algorithm, 1 );
+            if ( undef !== params.data_size )
+                appModel.set( 'algorithm.data_size', params.data_size, 1 );
+            if ( undef !== params.data_type )
+                appModel.set( 'algorithm.data_type', params.data_type, 1 );
+            if ( undef !== params.pre_sort_state )
+                appModel.set( 'algorithm.pre_sort_state', params.pre_sort_state, 1 );
+            doTest( appModel );
+        }
+    });
+    
+    $window.on('hashchange', function( evt ) {
+        appRouter.route( location.hash );
+    }).trigger( 'hashchange' );
+    
+}(jQuery, Contemplate, Dromeo, ModelView, Sort);
+//]]></script>
 
-    </body>
+</body>
 </html>

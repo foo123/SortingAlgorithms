@@ -363,7 +363,7 @@ Better start learning your [complexity](http://en.wikipedia.org/wiki/Computation
     };
     
     // time a function process and return the statistic
-    Sort.Time = function(callback, processToTime, useWorker) {
+    Sort.Time = function(callback, processToTime/*, useWorker*/) {
         var timer, args, ms, delay1=300, delay2=300, d=delay1+delay2;
         
         if ( processToTime )
