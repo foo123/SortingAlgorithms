@@ -5,86 +5,99 @@
 #
 ###################################################
 
-# The input files (list)
-src =[]
 
-    !tpl:umd-header-single.tpl.js  # include a umd-header template
+plugins =[{}]
+    # include 'doc' plugin from plugins folder
+    "doc" = "!plg:doc"
+@
+
+tasks =[{}]
     
-    ### Core file ###
-    ./src/Sort.js
-
-    ### Comparison-Based Algorithms ###
-    ./src/comparison/BuiltinSort.js
-
-    ./src/comparison/BubbleSort.js
-    ./src/comparison/CocktailSort.js
-    ./src/comparison/ShellSort.js
-    ./src/comparison/HeapSort.js
-    ./src/comparison/InsertionSort.js
-    ./src/comparison/CycleSort.js
-    ./src/comparison/LibrarySort.js
-    ./src/comparison/MergeSort.js
-    ./src/comparison/QuickSort.js
-
-    # !!not implemented yet!!
-    ./src/comparison/TimSort.js
-
-
-    ### Number/Count-Based Algorithms ###
-    ./src/arithmetic/CountingSort.js
-    ./src/arithmetic/BucketSort.js
-
-    ## a couple of custom algorithms ##
-    ./src/arithmetic/IndexSort.js
-    # not complete, in progress
-    ./src/arithmetic/StatisticalSort.js
-
-    !tpl:umd-footer.tpl.js  # include a umd-footer template
+    build =[{}]
     
-@  # end block
+        # The input files (list)
+        src =[]
 
-# extract header from this file
-header = ./src/Sort.js
+            !tpl:umd-header-single.tpl.js  # include a umd-header template
+            
+            ### Core file ###
+            ./src/Sort.js
 
-# Any texts to be replaced in the final file (map)
-replace =[{}]
+            ### Comparison-Based Algorithms ###
+            ./src/comparison/BuiltinSort.js
 
-    "@@ROOT@@" = "this"
-    "@@EXPORTS@@" = "exports"
-    "@@VERSION@@" = "0.2.4"
-    "@@USE_STRICT@@" = '"use strict";'
-    "@@MODULE_NAME@@" = "Sort"
-    
-@  # end block
+            ./src/comparison/BubbleSort.js
+            ./src/comparison/CocktailSort.js
+            ./src/comparison/ShellSort.js
+            ./src/comparison/HeapSort.js
+            ./src/comparison/InsertionSort.js
+            ./src/comparison/CycleSort.js
+            ./src/comparison/LibrarySort.js
+            ./src/comparison/MergeSort.js
+            ./src/comparison/QuickSort.js
 
-# Extract documentation from the source (map)
-doc ={}
-    
-    "startdoc" = "/**[DOC_MARKDOWN]"
-    "enddoc" = "[/DOC_MARKDOWN]**/"
-    "output" = "./manual.md"
+            # !!not implemented yet!!
+            ./src/comparison/TimSort.js
 
-@  # end block
 
-# Minify the Package (map of lists)
-minify ={}
+            ### Number/Count-Based Algorithms ###
+            ./src/arithmetic/CountingSort.js
+            ./src/arithmetic/BucketSort.js
 
-    # Options for Node UglifyJS Compiler (if used), (default minify options, mangle and compress)
-    uglifyjs =[]
-        -m -c
-    @  # end block
+            ## a couple of custom algorithms ##
+            ./src/arithmetic/IndexSort.js
+            # not complete, in progress
+            ./src/arithmetic/StatisticalSort.js
 
-    # Options for Java Closure Compiler (if used), (default minify options)
-    closure =[]
-        "--language_in=ECMASCRIPT5_STRICT"
-    @  # end block
+            !tpl:umd-footer.tpl.js  # include a umd-footer template
+            
+        @
 
-    # Options for Java YUI Compressor Compiler (if used), (default minify options)
-    yui =[]
-        --preserve-semi
-    @  # end block
-    
-@  # end block
+        # extract header from this file
+        header = ./src/Sort.js
 
-# The final output file (value)
-out = ./test/js/sort.min.js
+        # Any texts to be replaced in the final file (map)
+        replace =[{}]
+
+            "@@ROOT@@" = "this"
+            "@@EXPORTS@@" = "exports"
+            "@@VERSION@@" = "0.2.4"
+            "@@USE_STRICT@@" = '"use strict";'
+            "@@MODULE_NAME@@" = "Sort"
+            
+        @
+
+        # Extract documentation from the source (map)
+        doc ={}
+            
+            "startdoc" = "/**[DOC_MARKDOWN]"
+            "enddoc" = "[/DOC_MARKDOWN]**/"
+            "output" = "./manual.md"
+
+        @
+
+        # Minify the Package (map of lists)
+        minify ={}
+
+            # Options for Node UglifyJS Compiler (if used), (default minify options, mangle and compress)
+            uglifyjs =[]
+                -m -c
+            @
+
+            # Options for Java Closure Compiler (if used), (default minify options)
+            closure =[]
+                "--language_in=ECMASCRIPT5_STRICT"
+            @
+
+            # Options for Java YUI Compressor Compiler (if used), (default minify options)
+            yui =[]
+                --preserve-semi
+            @
+            
+        @
+
+        # The final output file (value)
+        out = ./test/js/sort.min.js
+    @
+
+@
