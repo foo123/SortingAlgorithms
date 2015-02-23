@@ -36,19 +36,21 @@ tasks =[{}]
             ./src/comparison/MergeSort.js
             ./src/comparison/QuickSort.js
 
-            # !!not implemented yet!!
-            ./src/comparison/TimSort.js
-
-
             ### Number/Count-Based Algorithms ###
             ./src/arithmetic/CountingSort.js
             ./src/arithmetic/BucketSort.js
+            # !!not implemented yet!!
+            ./src/arithmetic/RadixSort.js
 
             ## a couple of custom algorithms ##
             ./src/arithmetic/IndexSort.js
             # not complete, in progress
             ./src/arithmetic/StatisticalSort.js
 
+            # !!not implemented yet!!
+            ./src/other/TimSort.js
+            ./src/other/BurstSort.js
+            
             !tpl:umd-footer.tpl.js  # include a umd-footer template
             
         @
@@ -61,7 +63,7 @@ tasks =[{}]
 
             "@@ROOT@@" = "this"
             "@@EXPORTS@@" = "exports"
-            "@@VERSION@@" = "0.2.4"
+            "@@VERSION@@" = "0.2.5"
             "@@USE_STRICT@@" = '"use strict";'
             "@@MODULE_NAME@@" = "Sort"
             

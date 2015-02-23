@@ -1,5 +1,4 @@
 !function(Sort, undef){
-
     @@USE_STRICT@@
     
     //
