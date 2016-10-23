@@ -10,7 +10,7 @@ __Various sorting algorithms implementations in JavaScript  (IN PROGRESS)__
 [![screenshot](/test/screenshot.png)](http://foo123.github.io/examples/sorting-algorithms/)
 
 
-* [Live Example](http://foo123.github.io/examples/sorting-algorithms/)
+* [Live Playground Example](http://foo123.github.io/examples/sorting-algorithms/)
 
 
 Sorting Series (a kind of discrete optimization problem)
