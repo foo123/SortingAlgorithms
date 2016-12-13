@@ -9,13 +9,13 @@
 var splice = Array.prototype.splice,
     Min = Math.min, 
     
-    Merge = function(a, left, middle, right) {
+    Merge = function(a, left, middle, right, merged) {
         // need at least 2 elements to merge
         if (right > left)
         {
-            var mL = right-left+1, merged = new Array(mL), 
-                m = 0, l = left, r = middle+1;
+            var mL = right-left+1, m = 0, l = left, r = middle+1;
             
+            merged = merged || new Array(mL);
             // merge
             while (l<=middle && r<=right) 
                 merged[ m++ ] = ( a[ l ] <= a[ r ] ) ? a[ l++ ] : a[ r++ ];
@@ -25,15 +25,16 @@ var splice = Array.prototype.splice,
                 merged[ m++ ] = a[ r++ ];
             
             // move the merged back to the a array
-            splice.apply(a, [left, mL].concat(merged));
+            //splice.apply(a, [left, mL].concat(merged));
+            for(m=0; m<mL; m++) a[left+m] = merged[m];
         }
         return a;
     }
 ;
 
 // http://en.wikipedia.org/wiki/Merge_sort
-var RecursiveMergeSort = Sort.RecursiveMergeSort = function(a, left, right) {
-    if (undef===left && undef===right) { left=0; right=a.length-1; }
+var RecursiveMergeSort = Sort.RecursiveMergeSort = function(a, left, right, aux) {
+    if (undef===left && undef===right) { left=0; right=a.length-1; aux = new Array(a.length); }
     
     // if list size is 0 (empty) or 1, consider it sorted and return it
     // (using less than or equal prevents infinite recursion for a zero length m)
@@ -44,13 +45,13 @@ var RecursiveMergeSort = Sort.RecursiveMergeSort = function(a, left, right) {
         // 1. DIVIDE Part...
         // recursively call merge_sort() to further split each sublist
         // until sublist size is 1
-        RecursiveMergeSort(a, left, middle-1);  
-        RecursiveMergeSort(a, middle, right);
+        RecursiveMergeSort(a, left, middle-1, aux);  
+        RecursiveMergeSort(a, middle, right, aux);
         
         // merge the sublists returned from prior calls to merge_sort()
         // and return the resulting merged sublist
         // 2. CONQUER Part...
-        Merge(a, left, middle-1, right);
+        Merge(a, left, middle-1, right, aux);
     }
     // in-place
     return a;
@@ -65,14 +66,15 @@ Sort.MergeSort = function(a) {
     if (N>1)
     {
         var logN = N,
-            j, n, size = 1, size2 = 2
+            j, n, size = 1, size2 = 2,
+            aux = new Array(N)
             ;
         
         while (logN)
         {
             n = N-size;
             for (j=0; j<n; j+=size2) 
-                Merge(a, j, j+size-1, Min(j+size2-1, N-1));
+                Merge(a, j, j+size-1, Min(j+size2-1, N-1), aux);
             
             size <<= 1;
             size2 <<= 1;
