@@ -25,8 +25,8 @@ of many other important algorithms and applications (see eg. Knuth TAOCP)
 For example Sorting is very closely associated to Searching, 
 another topic of immense importance and applications
 
-Under certain sorting states, searching can be achieved in O(logN) time
-or even in O(1) time (constant) for almost every search term
+Under certain sorting states, searching can be achieved in `O(logN)` time
+or even in `O(1)` time (constant) for almost every search term
 
 Sorting has 3 approaches:
 
@@ -36,9 +36,9 @@ Sorting has 3 approaches:
 
 * In the Block case, the whole array is available at once
 for this case many algorithms are known
-(comparison-based=> O(N^2), O(NlogN) complexities)
+(comparison-based=> `O(N^2)`, `O(NlogN)` complexities)
 and
-(number/count based=> O(N) complexity) (see below)
+(number/count based=> `O(N)` complexity) (see below)
 
 * In the Adaptive/Online case, the input series is
 accesed one at a time (for example an time-input signal)
@@ -47,7 +47,7 @@ In this case some of the previous algorithms can be transformed to work adaptive
 Apart from that, there are algorithms 
 (like Dynamic Lists, Dynamic Heaps and Balanced Trees, Tries, eg AVL Trees)
 which keep an input sequence always in a 'sorted' state (with each new input)
-With relatively low complexity (eg O(logN))
+With relatively low complexity (eg `O(logN)`)
 
 ###Comparison-Based vs. Arithmetic/Count-Based:
 
@@ -62,10 +62,25 @@ However better than this can be achieved
 do not use comparisons (of any kind) between elements, 
 but instead use their arithmetic/counting/statistical properties
 
-This makes possible algorithms which can sort in linear O(N) time (the fastest possible)
+This makes possible algorithms which can sort in linear `O(N)` time (the fastest possible)
 However these algorithms have some limitations (eg only Integers, or special kinds of Numbers)
 
-Is O(N) sorting possible for arbitrary random numbers??
+
+> Is `O(N)` sorting possible for arbitrary random numbers??
+
+
+Computing the value of a certain number `n` requires approximately `O(logn)` *"primitive digit"* operations. Since (statisticaly) the values of numbers in a list is correlated to the size of the list itself (i.e a list of size `N` contains random numbers in the range `0..N` with high probability over lists of same size for numbers in a given range), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms (see for example "what is the true complexity of radix sort?").
+
+> Classical algorithms for integer sorting require assumptions about the size of the integers to be sorted, or else have a running time dependent on the size.
+
+https://www.cs.unc.edu/~plaisted/comp550/linear%20time%20sorting.pdf
+
+However the catch here is that same holds for comparing arbitrary numbers, computationaly one has to compare `primitive digit` by `primitive digit` in sequence on average, hence an additional `O(logn)` complexity for comparison-based algorithms.
+
+
+> Is `O(NlogN)` complexity a kind of *strict base line* for this computational model??
+
+According to Knuth's theoretical lower bound theorem for general (comparison) sorting algorithms (note `O(logN!) = O(NlogN)`): the `O(NlogN)` bound is asymptoticaly tight.
 
 
 A summary of various sorting/searching algorithms can be found in [this pdf](http://epaperpress.com/sortsearch/download/sortsearch.pdf)
