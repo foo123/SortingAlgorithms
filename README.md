@@ -70,6 +70,30 @@ Is O(N) sorting possible for arbitrary random numbers??
 
 A summary of various sorting/searching algorithms can be found in [this pdf](http://epaperpress.com/sortsearch/download/sortsearch.pdf)
 
+
+**Included Algorithms**
+
+* Builtin (JavaScript's default sorting algorithm)
+* [Bubble Sort](http://en.wikipedia.org/wiki/Bubble_sort)
+* [Cocktail Sort](http://en.wikipedia.org/wiki/Cocktail_shaker_sort)
+* [Cycle Sort](http://en.wikipedia.org/wiki/Cycle_sort)
+* [Heap Sort](http://en.wikipedia.org/wiki/Heap_sort)
+* [Insertion Sort](http://en.wikipedia.org/wiki/Insertion_sort)
+* [Library Sort](http://en.wikipedia.org/wiki/Library_sort)
+* [Shell Sort](http://en.wikipedia.org/wiki/Shellsort)
+* [Quick Sort](http://en.wikipedia.org/wiki/Quicksort)
+* [Tree Sort](http://en.wikipedia.org/wiki/Tree_sort)
+* [Merge Sort](http://en.wikipedia.org/wiki/Merge_sort)
+* [Counting Sort](http://en.wikipedia.org/wiki/Counting_sort)
+* [Bucket Sort](http://en.wikipedia.org/wiki/Bucket_sort)
+* [Radix Sort](http://en.wikipedia.org/wiki/Radix_sort) (**not implemented yet**)
+* [Burst Sort](http://en.wikipedia.org/wiki/Burstsort) (**not implemented yet**)
+* [Tim Sort](http://en.wikipedia.org/wiki/Timsort) (**not implemented yet**)
+* Permutation Sort (**custom**)
+* Index Sort (**custom**)
+* Statistical Sort (**custom, in progress**)
+
+
 ------------------------------------------------------
 
 NOTE: The calculation of asymptotic complexity is done usually (using recursive relations)
@@ -98,6 +122,8 @@ In a concice library
  This demostrates that algorithms, like computer hardware, are a __technology__ . Total system performance depends on choosing efficient algorithms as much as choosing fast hardware. Just as rapid advances are being made in other computer technologies, they are being made in algorithms as well. (__Introduction to algorithms, 2nd Ed. Cormen,Leiserson,Rivest,Stein__)
  
  
+ 
+ __Algorithms as a "green" technology__
  
  Additionaly, every operation/instruction a computer performs has an energy consumption cost. So an efficient algorithm saves energy! 
  An efficient algorithm performs a computation by trying to use the resources in the best possible manner, so effectively uses energy in the best possible manner. 
