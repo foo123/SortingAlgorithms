@@ -32,35 +32,29 @@ Sorting has 3 approaches:
 
 (eg. NIST.gov maintains a dictionary of various algorithms at:  http://xlinux.nist.gov/dads// )
 
+
 ###Block vs. Online/Adaptive:
 
-* In the Block case, the whole array is available at once
-for this case many algorithms are known
-(comparison-based=> `O(N^2)`, `O(NlogN)` complexities)
-and
-(number/count based=> `O(N)` complexity) (see below)
+1. In the Block case, the whole array is available at once
+for this case many algorithms are known (comparison-based=> `O(N^2)`, `O(NlogN)` complexities) and (number/count based=> `O(N)` complexity) (see below)
 
-* In the Adaptive/Online case, the input series is
-accesed one at a time (for example an time-input signal)
-In this case some of the previous algorithms can be transformed to work adaptively
+2. In the Adaptive/Online case, the input series is
+accesed one at a time (for example an time-input signal). In this case some of the previous algorithms can be transformed to work adaptively
 
-Apart from that, there are algorithms 
-(like Dynamic Lists, Dynamic Heaps and Balanced Trees, Tries, eg AVL Trees)
-which keep an input sequence always in a 'sorted' state (with each new input)
-With relatively low complexity (eg `O(logN)`)
+Apart from that, there are algorithms (like Dynamic Lists, Dynamic Heaps and Balanced Trees, Tries, eg AVL Trees)
+which keep an input sequence always in a 'sorted' state (with each new input) with relatively low complexity (eg `O(logN)`)
+
 
 ###Comparison-Based vs. Arithmetic/Count-Based:
 
 * Comparison-based sorting algorithms (InsertionSort, MergeSort, QuickSort, etc..) sort
 a series by comparing elements with each other in some optimum sense
 
-The best time complexity of these algorithms is (at present) O(NlogN)
+The best time complexity of these algorithms is `O(NlogN)`
 
 However better than this can be achieved
 
-* Arithmetic/Count-based sorting algorithms (CountingSort, BucketSort, RadixSort, etc..), 
-do not use comparisons (of any kind) between elements, 
-but instead use their arithmetic/counting/statistical properties
+* Statistics-based sorting algorithms (CountingSort, BucketSort, RadixSort, etc..), do not use comparisons (of any kind) between elements, but instead use their arithmetic/statistical properties
 
 This makes possible algorithms which can sort in linear `O(N)` time (the fastest possible)
 However these algorithms have some limitations (eg only Integers, or special kinds of Numbers)
@@ -69,11 +63,11 @@ However these algorithms have some limitations (eg only Integers, or special kin
 > Is `O(N)` sorting possible for arbitrary random numbers??
 
 
-Computing the value of a certain number `n` requires approximately `O(logn)` *"primitive digit"* operations. Since (statisticaly) the values of numbers in a list is correlated to the size of the list itself (i.e a list of size `N` contains random numbers in the range `0..N` with high probability over lists of same size for numbers in a given range), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms (see for example "what is the true complexity of radix sort?").
+Computing the value of a certain number `n` requires approximately `O(logn)` *"primitive digit"* operations. Since (statisticaly) the **values of numbers in a list is correlated to the size of the list itself** (i.e a list of size `N` contains random numbers in the range `0..N` with **very high probability** over lists of same size for numbers in a given range), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms (see for example *"what is the true complexity of radix sort?"*).
 
-> Classical algorithms for integer sorting require assumptions about the size of the integers to be sorted, or else have a running time dependent on the size.
+> Classical algorithms for integer sorting require **assumptions about the size of the integers** to be sorted, or else have a **running time dependent on the size**.
 
-https://www.cs.unc.edu/~plaisted/comp550/linear%20time%20sorting.pdf
+-- [Sorting in Linear Time?](https://www.cs.unc.edu/~plaisted/comp550/linear%20time%20sorting.pdf)
 
 However the catch here is that same holds for comparing arbitrary numbers, computationaly one has to compare `primitive digit` by `primitive digit` in sequence on average, hence an additional `O(logn)` complexity for comparison-based algorithms.
 
