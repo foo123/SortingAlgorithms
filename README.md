@@ -74,7 +74,7 @@ However the catch here is that same holds for comparing arbitrary numbers, compu
 
 > Is `O(NlogN)` complexity a kind of *strict base line* for this computational model??
 
-According to Knuth's theoretical lower bound theorem for general (comparison) sorting algorithms (note `O(logN!) = O(NlogN)`): the `O(NlogN)` bound is asymptoticaly tight.
+According to Knuth's theoretical lower bound theorem for general (comparison) sorting algorithms (note `O(logN!) = O(NlogN)`): the `O(NlogN)` bound is asymptoticaly tight (see also [information-theoretic lower bound for comparison sorts](http://www.inf.fh-flensburg.de/lang/algorithmen/sortieren/lowerbounden.htm) ie &Omega;(NlogN) ).
 
 
 A summary of various sorting/searching algorithms can be found in [this pdf](http://epaperpress.com/sortsearch/download/sortsearch.pdf)
