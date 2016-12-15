@@ -13,20 +13,15 @@ __Various sorting algorithms implementations in JavaScript  (IN PROGRESS)__
 * [Live Playground Example](http://foo123.github.io/examples/sorting-algorithms/)
 
 
-Sorting Series (a kind of discrete optimization problem)
-lies at the center of Computer Science and Algorithms
-because of its many uses
+Sorting Series, which is also a **kind of discrete optimization problem** (i.e the permutation function `p` of `0..N-1` which **maximizes** `0*a[p[0]]+1*a[p[1]]+..+(N-1)*a[p[N-1]]` is the **permutation which sorts the array `a` in ascending order** that is `a[p[0]] <= a[p[1]] <= .. <= a[p[N-1]]`), lies at the center of Computer Science and Algorithms because of its many uses.
 
 (Ref. http://en.wikipedia.org/wiki/Sorting_algorithm)
 
-Also Sorting, in one way or another, is integral part
-of many other important algorithms and applications (see eg. Knuth TAOCP)
+Furthermore Sorting, in one way or another, is integral part of many other important algorithms and applications (see eg. Knuth TAOCP)
 
-For example Sorting is very closely associated to Searching, 
-another topic of immense importance and applications
+For example Sorting is very closely associated to Searching, another topic of immense importance and applications.
 
-Under certain sorting states, searching can be achieved in `O(logN)` time
-or even in `O(1)` time (constant) for almost every search term
+Under certain sorting states, searching can be achieved in `O(logN)` time or even in `O(1)` time (constant) for almost every search term.
 
 Sorting has 3 approaches:
 
