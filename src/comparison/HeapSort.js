@@ -1,9 +1,7 @@
 !function(Sort, undef){
 @@USE_STRICT@@
 
-//
 //  Comparison Algorithms
-//
 
 // adapted from: https://github.com/mgechev/javascript-algorithms
 // auxilliaries
@@ -53,19 +51,14 @@ var Floor = Math.floor,
     }
 ;
 
-// for reference
-// http://en.wikipedia.org/wiki/Heap_sort
-
-// adapted from: https://github.com/mgechev/javascript-algorithms
-
-Sort.HeapSort = function(a) {
+Sort.HeapSort = function( a ) {
+    // http://en.wikipedia.org/wiki/Heap_sort
+    // adapted from: https://github.com/mgechev/javascript-algorithms
     var N = a.length, temp, i;
+    if ( 1 >= N ) return a;
     
-    if (N<=1) return a;
-    
-    buildMaxHeap(a);
-    
-    for (i=N-1; i>0; i--) 
+    buildMaxHeap( a );
+    for(i=N-1; i>0; i--) 
     {
         temp = a[0];
         a[0] = a[i];
@@ -73,11 +66,9 @@ Sort.HeapSort = function(a) {
         N--;
         heapify(a, 0, N);
     }
-    // in-place
     return a;
 };
 Sort.HeapSort.reference = "http://en.wikipedia.org/wiki/Heap_sort";
 Sort.HeapSort.description = "Heapsort is a comparison-based sorting algorithm to create a sorted array (or list), and is part of the selection sort family. Although somewhat slower in practice on most machines than a well-implemented quicksort, it has the advantage of a more favorable worst-case O(nlogn) runtime.";
-
 
 }(Sort);

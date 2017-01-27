@@ -10,59 +10,90 @@
 
 /**[DOC_MARKDOWN]
     
-Sorting Series (a kind of discrete optimization problem)
-lies at the center of Computer Science and Algorithms
-because of its many uses
+Sorting Series, which is also a **kind of discrete optimization problem** (i.e the permutation function `p` of `0..N-1` which **maximizes** `0*a[p[0]]+1*a[p[1]]+..+(N-1)*a[p[N-1]]` is the **permutation which sorts the array `a` in ascending order** that is `a[p[0]] <= a[p[1]] <= .. <= a[p[N-1]]`), lies at the center of Computer Science and Algorithms because of its many uses.
 
 (Ref. http://en.wikipedia.org/wiki/Sorting_algorithm)
 
-Also Sorting, in one way or another, is integral part
-of many other important algorithms and applications (see eg. Knuth TAOCP)
+Furthermore Sorting, in one way or another, is integral part of many other important algorithms and applications (see eg. Knuth TAOCP)
 
-For example Sorting is very closely associated to Searching, 
-another topic of immense importance and applications
+For example Sorting is very closely associated to Searching, another topic of immense importance and applications.
 
-Under certain sorting states, searching can be achieved in O(logN) time
-or even in O(1) time (constant) for almost every search term
+Under certain sorting states, searching can be achieved in `O(logN)` time or even in `O(1)` time (constant) for almost every search term.
 
 Sorting has 3 approaches:
 
 (eg. NIST.gov maintains a dictionary of various algorithms at:  http://xlinux.nist.gov/dads// )
 
+
 ###Block vs. Online/Adaptive:
 
-* In the Block case, the whole array is available at once
-for this case many algorithms are known
-(comparison-based=> O(N^2), O(NlogN) complexities)
-and
-(number/count based=> O(N) complexity) (see below)
+1. In the Block case, the whole array is available at once
+for this case many algorithms are known (comparison-based=> `O(N^2)`, `O(NlogN)` complexities) and (number/count based=> `O(N)` complexity) (see below)
 
-* In the Adaptive/Online case, the input series is
-accesed one at a time (for example an time-input signal)
-In this case some of the previous algorithms can be transformed to work adaptively
+2. In the Adaptive/Online case, the input series is
+accesed one at a time (for example an time-input signal). In this case some of the previous algorithms can be transformed to work adaptively
 
-Apart from that, there are algorithms 
-(like Dynamic Lists, Dynamic Heaps and Balanced Trees, Tries, eg AVL Trees)
-which keep an input sequence always in a 'sorted' state (with each new input)
-With relatively low complexity (eg O(logN))
+Apart from that, there are algorithms (like Dynamic Lists, Dynamic Heaps and Balanced Trees, Tries, eg AVL Trees)
+which keep an input sequence always in a 'sorted' state (with each new input) with relatively low complexity (eg `O(logN)`)
+
 
 ###Comparison-Based vs. Arithmetic/Count-Based:
 
 * Comparison-based sorting algorithms (InsertionSort, MergeSort, QuickSort, etc..) sort
 a series by comparing elements with each other in some optimum sense
 
-The best time complexity of these algorithms is (at present) O(NlogN)
+The best time complexity of these algorithms is `O(NlogN)`
 
 However better than this can be achieved
 
-* Arithmetic/Count-based sorting algorithms (CountingSort, BucketSort, RadixSort, etc..), 
-do not use comparisons (of any kind) between elements, 
-but instead use their arithmetic/counting/statistical properties
+* Statistics-based sorting algorithms (CountingSort, BucketSort, RadixSort, etc..), do not use comparisons (of any kind) between elements, but instead use their arithmetic/statistical properties
 
-This makes possible algorithms which can sort in linear O(N) time (the fastest possible)
+This makes possible algorithms which can sort in linear `O(N)` time (the fastest possible)
 However these algorithms have some limitations (eg only Integers, or special kinds of Numbers)
 
-Is O(N) sorting possible for arbitrary random numbers??
+
+> Is `O(N)` sorting possible for arbitrary random numbers??
+
+
+Computing the value of a certain number `n` requires approximately `O(logn)` *"primitive digit"* operations. Since (statisticaly) the **values of numbers in a list is correlated to the size of the list itself** (i.e a list of size `N` contains random numbers in the range `0..N` with **very high probability** over lists of same size for numbers in a given range), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms (see for example *"what is the true complexity of radix sort?"*).
+
+> Classical algorithms for integer sorting require **assumptions about the size of the integers** to be sorted, or else have a **running time dependent on the size**.
+
+-- [Sorting in Linear Time?](https://www.cs.unc.edu/~plaisted/comp550/linear%20time%20sorting.pdf)
+
+However the catch here is that same holds for comparing arbitrary numbers, computationaly one has to compare `primitive digit` by `primitive digit` in sequence on average, hence an additional `O(logn)` complexity for comparison-based algorithms.
+
+
+> Is `O(NlogN)` complexity a kind of *strict base line* for this computational model??
+
+According to Knuth's theoretical lower bound theorem for general (comparison) sorting algorithms (note `O(logN!) = O(NlogN)`): the `O(NlogN)` bound is asymptoticaly tight (see also [information-theoretic lower bound for comparison sorts](http://www.inf.fh-flensburg.de/lang/algorithmen/sortieren/lowerbounden.htm) ie &Omega;(NlogN) ).
+
+
+A summary of various sorting/searching algorithms can be found in [this pdf](http://epaperpress.com/sortsearch/download/sortsearch.pdf)
+
+
+**Included Algorithms**
+
+* Builtin (JavaScript's default sorting algorithm)
+* [Bubble Sort](http://en.wikipedia.org/wiki/Bubble_sort)
+* [Cocktail Sort](http://en.wikipedia.org/wiki/Cocktail_shaker_sort)
+* [Cycle Sort](http://en.wikipedia.org/wiki/Cycle_sort)
+* [Heap Sort](http://en.wikipedia.org/wiki/Heap_sort)
+* [Insertion Sort](http://en.wikipedia.org/wiki/Insertion_sort)
+* [Library Sort](http://en.wikipedia.org/wiki/Library_sort)
+* [Shell Sort](http://en.wikipedia.org/wiki/Shellsort)
+* [Quick Sort](http://en.wikipedia.org/wiki/Quicksort)
+* [Tree Sort](http://en.wikipedia.org/wiki/Tree_sort)
+* [Merge Sort](http://en.wikipedia.org/wiki/Merge_sort)
+* [Counting Sort](http://en.wikipedia.org/wiki/Counting_sort)
+* [Bucket Sort](http://en.wikipedia.org/wiki/Bucket_sort)
+* [Radix Sort](http://en.wikipedia.org/wiki/Radix_sort) (**not implemented yet**)
+* [Burst Sort](http://en.wikipedia.org/wiki/Burstsort) (**not implemented yet**)
+* [Tim Sort](http://en.wikipedia.org/wiki/Timsort) (**not implemented yet**)
+* Permutation Sort (**custom**)
+* Index Sort (**custom**)
+* Statistical Sort (**custom, in progress**)
+
 
 ------------------------------------------------------
 
@@ -70,9 +101,9 @@ NOTE: The calculation of asymptotic complexity is done usually (using recursive 
 with the Master Theorem :
 
 Refs.   
-     http://en.wikipedia.org/wiki/Master_theorem, 
-     http://en.wikipedia.org/wiki/Introduction_to_Algorithms
-     
+        http://en.wikipedia.org/wiki/Master_theorem, 
+        http://en.wikipedia.org/wiki/Introduction_to_Algorithms
+        
 
 T(n) = aT(n/b) + f(n),  a>=1, b>1
 
@@ -88,393 +119,68 @@ In a concice library
 
 
 > __Algorithms as a technology__   Suppose computers were infinitely fast and memory was free. Would you have any reason to study algorithms? The answer is yes, if for no other reason than that you would  still like to demonstrate that your solution method terminates and does so with the correct answer. 
-...Of course, computers may be fast but not infinitely fast and memory may be cheap but not completely free. Computing time is therefore a  bounded resource, and so is space in memory. These resources should be used wisely and algorithms that are efficient in terms of time and space will help you do so.  
-This demostrates that algorithms, like computer hardware, are a __technology__ . Total system performance depends on choosing efficient algorithms as much as choosing fast hardware. Just as rapid advances are being made in other computer technologies, they are being made in algorithms as well. (__Introduction to algorithms, 2nd Ed. Cormen,Leiserson,Rivest,Stein__)
-
-
-
+ ...Of course, computers may be fast but not infinitely fast and memory may be cheap but not completely free. Computing time is therefore a  bounded resource, and so is space in memory. These resources should be used wisely and algorithms that are efficient in terms of time and space will help you do so.  
+ This demostrates that algorithms, like computer hardware, are a __technology__ . Total system performance depends on choosing efficient algorithms as much as choosing fast hardware. Just as rapid advances are being made in other computer technologies, they are being made in algorithms as well. (__Introduction to algorithms, 2nd Ed. Cormen,Leiserson,Rivest,Stein__)
+ 
+ 
+ 
+__Algorithms as a "green" technology__
+ 
 Additionaly, every operation/instruction a computer performs has an energy consumption cost. So an efficient algorithm saves energy! 
 An efficient algorithm performs a computation by trying to use the resources in the best possible manner, so effectively uses energy in the best possible manner. 
 Where does energy come from? It comes from burning coal (mainly). 
 So there you have it, efficient code is ecological! 
-Better start learning your [complexity](http://en.wikipedia.org/wiki/Computational_complexity_theory) soon.
+Better start learning your [complexity]( http://en.wikipedia.org/wiki/Computational_complexity_theory) soon.
     
 [/DOC_MARKDOWN]**/
 
 @@USE_STRICT@@
 
-var Sort = { VERSION: "@@VERSION@@" }, undef = undefined;
+var Sort = {VERSION: "@@VERSION@@"}, undef = undefined;
 
 var root = this, FP = Function.prototype, OP = Object.prototype, AP = Array.prototype,
-    slice = AP.slice,
-    Min = Math.min, Max = Math.max,
-    Sqrt = Math.sqrt, Log = Math.log,
-    R = Math.random, Round = Math.round
+    slice = AP.slice, toString = OP.toString, stdMath = Math,
+    Min = stdMath.min, Max = stdMath.max, Sqrt = stdMath.sqrt,
+    Log = stdMath.log, R = stdMath.random, Round = stdMath.round,
+    NODE = 1, PREV = 2, NEXT = 3, LEFT = 4, RIGHT = 5
 ;
 
-//
-// auxilliary methods
-//
-function operate( a, f, f0, i1, i2 )
-{
-    var len = a.length;
-    if ( arguments.length < 4 ) i2 = len-1;
-    if ( 0 > i2 ) i2 += len;
-    if ( arguments.length < 3 ) i1 = 0;
-    if ( i1 > i2 ) return f0;
-    var i, k, l=i2-i1+1, r=l&15, q=r&1, fv=q?f(f0,a[i1]):f0;
-    for (i=q; i<r; i+=2)  { k = i1+i; fv = f(f(fv,a[k]),a[k+1]); }
-    for (i=r; i<l; i+=16) { k = i1+i; fv = f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(f(fv,a[k]),a[k+1]),a[k+2]),a[k+3]),a[k+4]),a[k+5]),a[k+6]),a[k+7]),a[k+8]),a[k+9]),a[k+10]),a[k+11]),a[k+12]),a[k+13]),a[k+14]),a[k+15]); }
-    return fv;
-}
-function map( a, f, i1, i2 )
-{
-    var len = a.length;
-    if ( arguments.length < 4 ) i2 = len-1;
-    if ( 0 > i2 ) i2 += len;
-    if ( arguments.length < 3 ) i1 = 0;
-    if ( i1 > i2 ) return [];
-    var i, k, l=i2-i1+1, r=l&15, q=r&1, fv=new Array(l);
-    if ( q ) fv[0] = f(a[i1]);
-    for (i=q; i<r; i+=2)
-    { 
-        k = i1+i;
-        fv[i  ] = f(a[k  ]);
-        fv[i+1] = f(a[k+1]);
-    }
-    for (i=r; i<l; i+=16)
-    {
-        k = i1+i;
-        fv[i  ] = f(a[k  ]);
-        fv[i+1] = f(a[k+1]);
-        fv[i+2] = f(a[k+2]);
-        fv[i+3] = f(a[k+3]);
-        fv[i+4] = f(a[k+4]);
-        fv[i+5] = f(a[k+5]);
-        fv[i+6] = f(a[k+6]);
-        fv[i+7] = f(a[k+7]);
-        fv[i+8] = f(a[k+8]);
-        fv[i+9] = f(a[k+9]);
-        fv[i+10] = f(a[k+10]);
-        fv[i+11] = f(a[k+11]);
-        fv[i+12] = f(a[k+12]);
-        fv[i+13] = f(a[k+13]);
-        fv[i+14] = f(a[k+14]);
-        fv[i+15] = f(a[k+15]);
-    }
-    return fv;
-}
-function filter( a, f, i1, i2 )
-{
-    var len = a.length;
-    if ( arguments.length < 4 ) i2 = len-1;
-    if ( 0 > i2 ) i2 += len;
-    if ( arguments.length < 3 ) i1 = 0;
-    if ( i1 > i2 ) return [];
-    var i, k, l=i2-i1+1, r=l&15, q=r&1, fv=[];
-    if ( q && f(a[i1]) ) fv.push(a[i1]);
-    for (i=q; i<r; i+=2)
-    { 
-        k = i1+i;
-        if ( f(a[  k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-    }
-    for (i=r; i<l; i+=16)
-    {
-        k = i1+i;
-        if ( f(a[  k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-        if ( f(a[++k]) ) fv.push(a[k]);
-    }
-    return fv;
-}
-function each( a, f, i1, i2 )
-{
-    var len = a.length;
-    if ( arguments.length < 4 ) i2 = len-1;
-    if ( 0 > i2 ) i2 += len;
-    if ( arguments.length < 3 ) i1 = 0;
-    if ( i1 > i2 ) return a;
-    var i, k, l=i2-i1+1, r=l&15, q=r&1;
-    if ( q ) f(a[i1], i1, a, i1, i2);
-    for (i=q; i<r; i+=2)
-    { 
-        k = i1+i;
-        f(a[  k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-    }
-    for (i=r; i<l; i+=16)
-    {
-        k = i1+i;
-        f(a[  k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-        f(a[++k], k, a, i1, i2);
-    }
-    return a;
-}
-function loop( a, f, i1, i2 )
-{
-    var len = a.length;
-    if ( arguments.length < 4 ) i2 = len-1;
-    if ( 0 > i2 ) i2 += len;
-    if ( arguments.length < 3 ) i1 = 0;
-    if ( i1 > i2 ) return a;
-    var i, k, l=i2-i1+1, r=l&15, q=r&1;
-    if ( q ) f(a, i1, i1, i2);
-    for (i=q; i<r; i+=2)
-    { 
-        k = i1+i;
-        f(a,   k, i1, i2);
-        f(a, ++k, i1, i2);
-    }
-    for (i=r; i<l; i+=16)
-    {
-        k = i1+i;
-        f(a,   k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-        f(a, ++k, i1, i2);
-    }
-    return a;
-}
-function step( a, f, f0, f1, i1, i2 )
-{
-    var len = a.length;
-    if ( arguments.length < 6 ) i2 = len-1;
-    if ( 0 > i2 ) i2 += len;
-    if ( arguments.length < 5 ) i1 = 0;
-    if ( arguments.length < 4 ) f1 = false;
-    if ( arguments.length < 3 ) f0 = true;
-    if ( i1 > i2 || f1 === f0 ) return f0;
-    var i, k, l=i2-i1+1, r=l&15, q=r&1, fv=f0;
-    if ( q )
-    {
-        fv = f(a, i1, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-    }
-    for (i=q; i<r; i+=2)
-    { 
-        k = i1+i;
-        fv = f(a,   k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-    }
-    for (i=r; i<l; i+=16)
-    {
-        k = i1+i;
-        fv = f(a,   k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-        fv = f(a, ++k, fv, i1, i2);
-        if ( f1 === fv ) return fv;
-    }
-    return fv;
-}
-function random_swap( a, i, i1, i2 )
-{
-    var perm, swap, n = i2-i1;
-    perm = i1+Round((i2-i)*R());
-    swap = a[ i1+n ];
-    a[ i1+n ] = a[ perm ];
-    a[ perm ] = swap;
-}
-// http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
-function shuffle( a )
-{
-    /*var N = a.length, perm, swap;
-    while( N-- )
-    {
-        perm = RI( 0, N );
-        swap = a[ N ];
-        a[ N ] = a[ perm ];
-        a[ perm ] = swap;
-    }
-    // in-place
-    return a;*/
-    return loop( a, random_swap );
-}
-// check whether an array of numbers is sorted
-// used to check algorithm validity under different cases
-/*function isSorted( a, strict, descending )
-{
-    var N = a.length, i, x, s, fs, tie;
-    
-    // already sorted
-    if ( N<=1 ) return true;
-    
-    strict = true === strict;
-    descending = true === descending;
-    
-    x = a[1]-a[0];
-    fs = x ? (x < 0 ? -1 : 1) : 0;
-    // only ascending sorting checked
-    if (strict && fs < 0) return false;
-    
-    tie = (fs) ? false : true;
-    
-    for (i=1; i<N; i++)
-    {
-        x = a[i]-a[i-1];
-        s = x ? (x < 0 ? -1 : 1) : 0;
-        if (tie && s) { fs = s; tie = false; }
-        if (strict && s < 0)  return false;
-        else if (s&&(s-fs))  return false;
-    }
-    return true;
-}*/
-/*function isSorted( a, strict, descending )
-{
-    var N = a.length, i;
-    
-    // already sorted
-    if ( N<=1 ) return true;
-    
-    strict = true === strict;
-    descending = true === descending;
-    
-    if ( descending )
-    {
-        if ( strict )
-        {
-            for (i=1; i<N; i++) if ( a[i-1] <= a[i] ) return false;
-        }
-        else
-        {
-            for (i=1; i<N; i++) if ( a[i-1] < a[i] ) return false;
-        }
-    }
-    else
-    {
-        if ( strict )
-        {
-            for (i=1; i<N; i++) if ( a[i-1] >= a[i] ) return false;
-        }
-        else
-        {
-            for (i=1; i<N; i++) if ( a[i-1] > a[i] ) return false;
-        }
-    }
-    return true;
-}*/
-function order_ascending( a, i )
-{
-    return a[i] >= a[i-1];
-}
-function order_descending( a, i )
-{
-    return a[i] <= a[i-1];
-}
-function is_sorted( a, descending )
-{
-    return step( a, true === descending ? order_descending : order_ascending, true, false, 1 );
-}
 function RI(m, M)
 { 
     return Round((M-m)*R() + m); 
 }
 function U(m, M)
 { 
-    m = (undef===m) ? 0 : m; 
-    M = (undef===M) ? 1 : M; 
+    m = null==m ? 0 : +m; 
+    M = null==M ? 1 : +M; 
     return (M-m)*R() + m; 
 }
-// https://en.wikipedia.org/wiki/Normal_distribution
-// https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform
-// https://en.wikipedia.org/wiki/Marsaglia_polar_method
 function G(mu, sigma)
 {
-    mu = (undef===mu) ? 0.0 : mu;
-    sigma = (undef===sigma) ? 1.0 : sigma;
-    
-    if ( G.isSpareReady ) 
-    { 
-        G.isSpareReady = false;  
-        return mu + sigma*G.spare;  
-    }
-    
-    // generate 2 new pairs
+    // https://en.wikipedia.org/wiki/Normal_distribution
+    // https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform
+    // https://en.wikipedia.org/wiki/Marsaglia_polar_method
+    mu = null==mu ? 0.0 : +mu;
+    sigma = null==sigma ? 1.0 : +sigma;
     var reject = true, u, v, s, multiplier, z0;
+    if ( null !== G.spare ) 
+    { 
+        v = mu + sigma*G.spare;
+        G.spare = null;
+        return v;
+    }
+    // generate 2 new pairs
     while ( reject )
     {
-        u = U(-1,1);  
-        v = U(-1,1);
-        s = u*u + v*v; 
-        reject = (0.0>=s || s>=1.0);
+        u = U(-1,1); v = U(-1,1); s = u*u + v*v;
+        reject = 0.0>=s || s>=1.0;
     }
     multiplier = Sqrt(-2.0*Log(s)/s);  
     G.spare = v*multiplier; 
-    G.isSpareReady = true;  
-    
     z0 = u*multiplier; 
     return mu + sigma*z0;
 }
-G.spare=0; G.isSpareReady=false;
+G.spare = null;
 function Sgn(x)
 {
     return x ? (x < 0 ? -1 : 1) : 0;
@@ -486,58 +192,51 @@ function asNumbers(a, b)
 
 function Constant( N, c )
 { 
-    var a = new Array(N), i; 
-    c = c||0;
-    for (i=0; i<N; i++) a[i] = c;
+    var i, a = new Array(N);
+    for(c=c||0,i=0; i<N; i++) a[i] = c;
     return a; 
 }
 function Duplicates( N, inc, numCuts )
 {
-    var a = new Array(N), i, k, c=inc;
-    for (i=0,k=0; i<N; i++,k++)
+    var i, k, c = inc, a = new Array(N);
+    for(i=0,k=0; i<N; i++,k++)
     {
-        a[i] = c;
-        if ( k>=numCuts ) { k = 0; c += inc; }
+        a[i] = c; if ( k>=numCuts ) { k = 0; c += inc; }
     }
     return a;
 }
 function Range( N, reverse )
 {
-    var a = new Array(N), i; 
+    var i, a = new Array(N);
     if ( true === reverse )
-    {
-        for (i=0; i<N; i++) a[i] = N-1-i;
-    }
+        for(i=0; i<N; i++) a[i] = N-1-i;
     else
-    {
-        for (i=0; i<N; i++) a[i] = i;
-    }
+        for(i=0; i<N; i++) a[i] = i;
     return a; 
 }
 function Equidistant( N, m, M, inc )
 {
-    var a = new Array(N), i;
-    inc = inc || (M-m)/N;
-    a[0] = m;
-    for (i=1; i<N; i++) a[i] = a[i-1] + inc;
+    var i, a = new Array(N);
+    inc = inc || (M-m)/N; a[0] = m;
+    for(i=1; i<N; i++) a[i] = a[i-1] + inc;
     return a;
 }
 function IntegerEquidistributable( N, m, M )
 {
-    var a = new Array(N), i;
-    for (i=0; i<N; i++) a[i] = RI(m, M);
+    var i, a = new Array(N);
+    for(i=0; i<N; i++) a[i] = RI(m, M);
     return a;
 }
 function NumberEquidistributable( N, m, M )
 {
-    var a = new Array(N), i;
-    for (i=0; i<N; i++) a[i] = U(m, M);
+    var i, a = new Array(N);
+    for(i=0; i<N; i++) a[i] = U(m, M);
     return a;
 }
 function IntegerDynamicRange( N, m, M, rangeInc, numCuts )
 {
-    var a = new Array(N), i, k, range=0;
-    for (i=0,k=0; i<N; i++,k++)
+    var i, k, range = 0, a = new Array(N);
+    for(i=0,k=0; i<N; i++,k++)
     {
         a[i] = RI(m, M) + range;
         if (k>=numCuts) { k = 0; range += rangeInc; }
@@ -546,16 +245,85 @@ function IntegerDynamicRange( N, m, M, rangeInc, numCuts )
 }
 function NumberDynamicRange( N, m, M, rangeInc, numCuts )
 {
-    var a = new Array(N), i, k, range=0;
-    for (i=0,k=0; i<N; i++,k++)
+    var i, k, range = 0, a = new Array(N);
+    for(i=0,k=0; i<N; i++,k++)
     {
         a[i] = U(m, M) + range;
         if (k>=numCuts) { k = 0; range += rangeInc; }
     }
     return a;
 }
+function shuffle( a )
+{
+    // http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+    var N = a.length, perm, swap;
+    while( N-- )
+    {
+        perm = RI( 0, N );
+        swap = a[ N ];
+        a[ N ] = a[ perm ];
+        a[ perm ] = swap;
+    }
+    // in-place
+    return a;
+}
+function is_array( x )
+{
+    return (x instanceof Array) || ('[object Array]' === toString.call(x));
+}
+function is_sorted( a, descending, strict )
+{
+    var i, a0, N = a.length;
+    // already sorted
+    if ( 1 >= N ) return true;
+    if ( true === descending )
+    {
+        if ( true === strict ) for(a0=a[0],i=1; i<N; i++) if ( a0 <= a[i] ) return false; else a0 = a[i];
+        else for(a0=a[0],i=1; i<N; i++) if ( a0 < a[i] ) return false; else a0 = a[i];
+    }
+    else
+    {
+        if ( true === strict ) for(a0=a[0],i=1; i<N; i++) if ( a0 >= a[i] ) return false; else a0 = a[i];
+        else for(a0=a[0],i=1; i<N; i++) if ( a0 > a[i] ) return false; else a0 = a[i];
+    }
+    return true;
+}
 
-//
+function Node( k, v, p, n, l, r, d )
+{
+    // a unified graph as well as (binary) tree, as well as quadraply-, doubly- and singly- linked list
+    var self = this;
+    self.key = k; self.val = v;
+    self.prev = p || null; self.next = n || null;
+    self.left = l || null; self.right = r || null;
+    self.data = d || null;
+}
+function walk( scheme, node, go )
+{
+    if ( null == node ) return;
+    var step, i, l, n, s = 0, sl = scheme.length;
+    while ( s < sl )
+    {
+        step = scheme[s]; s += 1; n = null;
+        if ( (NODE === step) )                                n = node;
+        else if ( (PREV === step) && (null != node.prev) )    n = node.prev;
+        else if ( (LEFT === step) && (null != node.left) )    n = node.left;
+        else if ( (RIGHT === step) && (null != node.right) )  n = node.right;
+        else if ( (NEXT === step) && (null != node.next) )    n = node.next;
+        else /*if ( null == n )*/ continue;
+        if ( node === n )  go( n );
+        else if ( is_array(n) ) for(i=0,l=n.length; i<l; i++) walk( scheme, n[i], go );
+        else  walk( scheme, n, go );
+    }
+}
+Node.NODE = NODE;
+Node.PREV = PREV;
+Node.NEXT = NEXT;
+Node.LEFT = LEFT;
+Node.RIGHT = RIGHT;
+Node.walk = walk;
+Sort.Node = Node;
+
 //
 // Typed Arrays Substitute 
 Sort.Array = Array;
@@ -568,59 +336,72 @@ Sort.Array8U = (typeof Uint8Array !== "undefined") ? Uint8Array : Array;
 Sort.Array16U = (typeof Uint16Array !== "undefined") ? Uint16Array : Array;
 Sort.Array32U = (typeof Uint32Array !== "undefined") ? Uint32Array : Array;
 
-// utils
-Sort.utils = { };
+Sort.Shuffle = shuffle;
+Sort.isSorted = is_sorted;
 
+// utils
+Sort.utils = {
+    RandomInteger: RI,
+    Uniform: U,
+    Normal: G,
+    asNumbers: asNumbers,
+    Constant: Constant,
+    Duplicates: Duplicates,
+    Equidistant: Equidistant,
+    IntegerEquidistributable: IntegerEquidistributable,
+    NumberEquidistributable: NumberEquidistributable,
+    IntegerDynamicRange: IntegerDynamicRange,
+    NumberDynamicRange: NumberDynamicRange,
+    Range: Range
+};
     
 // simple timer statistics class
 var Timer = Sort.utils.Timer = function( t ) {
     
     var 
         startTime = arguments.length ? t : new Date().getTime(),
-        endTime = Infinity,
-        msMin = Infinity, 
-        msMax = 0
+        endTime = Infinity, msMin = Infinity, msMax = 0,
+        self = this
     ;
     
-    this.getMs = function() {
+    self.getMs = function() {
         var ms = endTime - startTime;
         msMin = Min( msMin, ms );
         msMax = Max( msMax, ms );
         return ms;
     };
     
-    this.start = function () {
+    self.start = function () {
         startTime = new Date().getTime();
-        return this;
+        return self;
     };
     
-    this.end = function () {
+    self.end = function () {
         endTime = new Date().getTime();
-        return this;
+        return self;
     };
 
-    this.reset = function () {
+    self.reset = function () {
         startTime = new Date().getTime();
         endTime = Infinity;
-        return this;
+        return self;
     };
     
-    this.update = function () {
+    self.update = function () {
         endTime = new Date().getTime();
         startTime = endTime;
-        return this;
+        return self;
     };
 };
 
 // time a function process and return the statistic
 Sort.Time = function(callback, processToTime/*, useWorker*/) {
-    var timer, args, ms, delay1=300, delay2=300, d=delay1+delay2;
+    var timer, args, ms, delay1=200, delay2=200, d=delay1+delay2;
     
     if ( processToTime )
     {
-        args = slice.call( arguments );
-        args.shift( );
-        args.shift( );
+        args = slice.call( arguments, 2 );
+        //args.shift( ); args.shift( );
         
         timer = new Timer( );
         
@@ -629,19 +410,14 @@ Sort.Time = function(callback, processToTime/*, useWorker*/) {
         
         // use delays, to avoid timer get stuck
         setTimeout(function( ) {
-            
             // run the process with optional args passed
-            processToTime.apply({}, args);
-            
+            processToTime.apply(null, args);
             setTimeout(function( ) {
                 // return the timing result
                 timer.end( );
                 var ms = timer.getMs( )-d;
                 if ( callback ) callback.call(timer, ms);
-                
             }, delay2);
-            
-            
         }, delay1);
     }
     return 0;

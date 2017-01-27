@@ -1,7 +1,10 @@
 Sorting Algorithms
 ===================
 
-__Various sorting algorithms implementations in JavaScript  (IN PROGRESS)__
+![sort.js](/sort.jpg)
+
+
+__Various sorting algorithms implementations in JavaScript__
 
 
 [sort.min.js](https://raw.githubusercontent.com/foo123/SortingAlgorithms/master/test/js/sort.min.js)

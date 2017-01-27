@@ -1,33 +1,25 @@
 !function(Sort, undef){
 @@USE_STRICT@@
 
-//
 //  Comparison Algorithms
-//
 
-// for reference
-// http://en.wikipedia.org/wiki/Bubble_sort
-
-Sort.BubbleSort = function(a) {
+Sort.BubbleSort = function( a ) {
+    // http://en.wikipedia.org/wiki/Bubble_sort
     var N = a.length, i, newN, t;
-
-    if (N>1)
-    {
-        do{
-            newN = 0;
-            for (i = 1; i<=N-1; i++)
+    if ( 1 >= N ) return a;
+    do{
+        newN = 0;
+        for(i = 1; i<=N-1; i++)
+        {
+            if (a[i-1] > a[i])
             {
-                if (a[i-1] > a[i])
-                {
-                    //swap(A[i-1], A[i])
-                    t=a[i-1]; a[i-1]=a[i]; a[i]=t;
-                    newN = i;
-                }
+                //swap(A[i-1], A[i])
+                t=a[i-1]; a[i-1]=a[i]; a[i]=t;
+                newN = i;
             }
-            N = newN;
-        }while (N > 0);
-    }
-    // in-place
+        }
+        N = newN;
+    }while(N > 0);
     return a;
 };
 Sort.BubbleSort.reference = "http://en.wikipedia.org/wiki/Bubble_sort";

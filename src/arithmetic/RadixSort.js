@@ -1,13 +1,10 @@
 !function(Sort, undef){
 @@USE_STRICT@@
 
-//
-//  Numerical/Counting Algorithms
-//
+//  Numerical/Statistical Algorithms
 
-
-// http://en.wikipedia.org/wiki/Radix_sort
-Sort.RadixSort = function(a) {
+Sort.RadixSort = function( a ) {
+    // http://en.wikipedia.org/wiki/Radix_sort
     // TODO
     return a;
 };

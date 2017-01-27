@@ -1,9 +1,7 @@
 !function(Sort, undef){
 @@USE_STRICT@@
 
-//
-//  Numerical/Counting Algorithms
-//
+//  Numerical/Statistical Algorithms
 
 /**
 *
@@ -46,7 +44,7 @@ var Array64F = Sort.Array64F, Array32U = Sort.Array32U,
 ;
 
 // custom O(n) algorithm for arbitrary random numbers (IN PROGRESS)
-var StatisticalSort = Sort.StatisticalSort = function(a) {
+var StatisticalSort = Sort.StatisticalSort = function( a ) {
     var N = a.length, isOdd,
         sgn, fsgn, tie, isSorted, x,
         m, M, norm, norm2, invMm,
