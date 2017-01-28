@@ -94,6 +94,7 @@ A summary of various sorting/searching algorithms can be found in [this pdf](htt
 * [Counting Sort](http://en.wikipedia.org/wiki/Counting_sort)
 * [Bucket Sort](http://en.wikipedia.org/wiki/Bucket_sort)
 * [Radix Sort](http://en.wikipedia.org/wiki/Radix_sort) (**not implemented yet**)
+* [Intro Sort](https://en.wikipedia.org/wiki/Introsort) (**not implemented yet**)
 * [Burst Sort](http://en.wikipedia.org/wiki/Burstsort) (**not implemented yet**)
 * [Tim Sort](http://en.wikipedia.org/wiki/Timsort) (**not implemented yet**)
 * Permutation Sort (**custom**)
