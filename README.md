@@ -90,7 +90,7 @@ A summary of various sorting/searching algorithms can be found in [this pdf](htt
 * [Shell Sort](http://en.wikipedia.org/wiki/Shellsort)
 * [Quick Sort](http://en.wikipedia.org/wiki/Quicksort) (**recursive &amp; iterative**)
 * [Tree Sort](http://en.wikipedia.org/wiki/Tree_sort)
-* [Merge Sort](http://en.wikipedia.org/wiki/Merge_sort) (**recursive, iterative &amp; natural**)
+* [Merge Sort](http://en.wikipedia.org/wiki/Merge_sort) (**recursive, iterative &amp; natural TODO: in-place `O(1)` extra space version**)
 * [Counting Sort](http://en.wikipedia.org/wiki/Counting_sort)
 * [Bucket Sort](http://en.wikipedia.org/wiki/Bucket_sort)
 * [Radix Sort](http://en.wikipedia.org/wiki/Radix_sort) (**not implemented yet**)
