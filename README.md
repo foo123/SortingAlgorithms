@@ -10,10 +10,10 @@ __Various sorting algorithms implementations in JavaScript__
 [sort.min.js](https://raw.githubusercontent.com/foo123/SortingAlgorithms/master/test/js/sort.min.js)
 
 
-[![screenshot](/test/screenshot.png)](http://foo123.github.io/examples/sorting-algorithms/)
+[![screenshot](/test/screenshot.png)](https://foo123.github.io/examples/sorting-algorithms/)
 
 
-* [Live Playground Example](http://foo123.github.io/examples/sorting-algorithms/)
+* [Live Playground Example](https://foo123.github.io/examples/sorting-algorithms/)
 
 
 Sorting Series, which is also a **kind of discrete optimization problem** (i.e the permutation function `p` of `0..N-1` which **maximizes** `0*a[p[0]]+1*a[p[1]]+..+(N-1)*a[p[N-1]]` is the **permutation which sorts the array `a` in ascending order** that is `a[p[0]] <= a[p[1]] <= .. <= a[p[N-1]]`), lies at the center of Computer Science and Algorithms because of its many uses.
@@ -31,7 +31,7 @@ Sorting has 3 approaches:
 (eg. NIST.gov maintains a dictionary of various algorithms at:  http://xlinux.nist.gov/dads// )
 
 
-###Block vs. Online/Adaptive:
+### Block vs. Online/Adaptive:
 
 1. In the Block case, the whole array is available at once
 for this case many algorithms are known (comparison-based=> `O(N^2)`, `O(NlogN)` complexities) and (number/count based=> `O(N)` complexity) (see below)
@@ -43,7 +43,7 @@ Apart from that, there are algorithms (like Dynamic Lists, Dynamic Heaps and Bal
 which keep an input sequence always in a 'sorted' state (with each new input) with relatively low complexity (eg `O(logN)`)
 
 
-###Comparison-Based vs. Arithmetic/Count-Based:
+### Comparison-Based vs. Arithmetic/Count-Based:
 
 * Comparison-based sorting algorithms (InsertionSort, MergeSort, QuickSort, etc..) sort
 a series by comparing elements with each other in some optimum sense
