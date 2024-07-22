@@ -61,7 +61,7 @@ However these algorithms have some limitations (eg only Integers, or special kin
 > Is `O(N)` sorting possible for arbitrary random numbers??
 
 
-Computing the value of a certain number `n` requires approximately `O(logn)` *"primitive digit"* operations. Since (statisticaly) the **values of numbers in a list is correlated to the size of the list itself** (i.e a list of size `N` contains random numbers in the range `0..N` with **very high probability** over lists of same size for numbers in a given range), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms (see for example *"what is the true complexity of radix sort?"*).
+Computing the value of a certain number `n` (in a fixed type of encoding, eg `decimal-place`) requires approximately `O(logn)` *"primitive digit"* operations. Since (statisticaly) the **values of numbers in a list is increasingly correlated to the size of the list itself** (i.e a list of size `N` contains random numbers in the range `0..N` with **increasingly greater probability as `N` increases** over lists of same size for numbers in a given range), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms (see for example *"what is the true complexity of radix sort?"*).
 
 > Classical algorithms for integer sorting require **assumptions about the size of the integers** to be sorted, or else have a **running time dependent on the size**.
 
@@ -107,10 +107,10 @@ A summary of various sorting/searching algorithms can be found in [this pdf](htt
 NOTE: The calculation of asymptotic complexity is done usually (using recursive relations)
 with the Master Theorem :
 
-Refs.   
-        http://en.wikipedia.org/wiki/Master_theorem, 
+Refs.
+        http://en.wikipedia.org/wiki/Master_theorem,
         http://en.wikipedia.org/wiki/Introduction_to_Algorithms
-        
+
 
 T(n) = aT(n/b) + f(n),  a>=1, b>1
 
@@ -119,24 +119,24 @@ eg. for MergeSort => T(n) = 2T(n/2) + O(n) =>  T(n) = O(nlogn)
 
 ---------------------------------------------------------
 
-This package implements showcases of various (best known) sorting algorithms 
+This package implements showcases of various (best known) sorting algorithms
 (and a couple of custom ones)
 for study, experimentation and use in applications
 In a concice library
 
 
-> __Algorithms as a technology__   Suppose computers were infinitely fast and memory was free. Would you have any reason to study algorithms? The answer is yes, if for no other reason than that you would  still like to demonstrate that your solution method terminates and does so with the correct answer. 
- ...Of course, computers may be fast but not infinitely fast and memory may be cheap but not completely free. Computing time is therefore a  bounded resource, and so is space in memory. These resources should be used wisely and algorithms that are efficient in terms of time and space will help you do so.  
+> __Algorithms as a technology__   Suppose computers were infinitely fast and memory was free. Would you have any reason to study algorithms? The answer is yes, if for no other reason than that you would  still like to demonstrate that your solution method terminates and does so with the correct answer.
+ ...Of course, computers may be fast but not infinitely fast and memory may be cheap but not completely free. Computing time is therefore a  bounded resource, and so is space in memory. These resources should be used wisely and algorithms that are efficient in terms of time and space will help you do so.
  This demostrates that algorithms, like computer hardware, are a __technology__ . Total system performance depends on choosing efficient algorithms as much as choosing fast hardware. Just as rapid advances are being made in other computer technologies, they are being made in algorithms as well. (__Introduction to algorithms, 2nd Ed. Cormen,Leiserson,Rivest,Stein__)
- 
- 
- 
+
+
+
  __Algorithms as a "green" technology__
- 
- Additionaly, every operation/instruction a computer performs has an energy consumption cost. So an efficient algorithm saves energy! 
- An efficient algorithm performs a computation by trying to use the resources in the best possible manner, so effectively uses energy in the best possible manner. 
- Where does energy come from? It comes from burning coal (mainly). 
- So there you have it, efficient code is ecological! 
+
+ Additionaly, every operation/instruction a computer performs has an energy consumption cost. So an efficient algorithm saves energy!
+ An efficient algorithm performs a computation by trying to use the resources in the best possible manner, so effectively uses energy in the best possible manner.
+ Where does energy come from? It comes from burning coal (mainly).
+ So there you have it, efficient code is ecological!
  Better start learning your [complexity]( http://en.wikipedia.org/wiki/Computational_complexity_theory) soon.
 
 
