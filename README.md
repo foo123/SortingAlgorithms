@@ -16,11 +16,11 @@ __Various sorting algorithms implementations in JavaScript__
 * [Live Playground Example](https://foo123.github.io/examples/sorting-algorithms/)
 
 
-Sorting Series, which is also a **kind of discrete optimization problem** (eg the permutation function `p` of `0..N-1` which **maximizes** `0*a[p[0]]+1*a[p[1]]+..+(N-1)*a[p[N-1]]` is the **permutation which sorts the array `a` in ascending order** that is `a[p[0]] <= a[p[1]] <= .. <= a[p[N-1]]`); lies at the center of Computer Science and Algorithms because of its many uses.
+Sorting Series, which is also a **kind of discrete optimization problem** (eg the permutation function `perm` of `0..N-1` which **maximizes** `0*a[perm[0]]+1*a[perm[1]]+..+(N-1)*a[perm[N-1]]` is the **permutation which sorts the array `a` in ascending order** that is `a[perm[0]] <= a[perm[1]] <= .. <= a[perm[N-1]]`); lies at the center of Computer Science and Algorithms because of its many uses.
 
 (Ref. [Sorting Algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm))
 
-Furthermore Sorting, in one way or another, is integral part of many other important algorithms and applications (see eg. Knuth TAOCP)
+Furthermore Sorting, in one way or another, is integral part of many other important algorithms and applications (see eg. Knuth *The Art Of Computer Programming*)
 
 For example Sorting is very closely associated to Searching, another topic of immense importance and applications.
 
@@ -34,7 +34,7 @@ Sorting has 3 approaches:
 ### Block vs. Online/Adaptive:
 
 1. In the Block case, the whole array is available at once
-for this case many algorithms are known (comparison-based=> `O(N^2)`, `O(NlogN)` complexities) and (number/count based=> `O(N)` complexity) (see below)
+for this case many algorithms are known (comparison-based => `O(N^2)`, `O(NlogN)` complexities) and (number/count based => `O(N)` complexity) (see below)
 
 2. In the Adaptive/Online case, the input series is
 accesed one at a time (for example an time-input signal). In this case some of the previous algorithms can be transformed to work adaptively
@@ -58,13 +58,15 @@ accesed one at a time (for example an time-input signal). In this case some of t
 > Is `O(N)` sorting possible for arbitrary random numbers??
 
 
-Computing the value of a certain number `n` (in a fixed type of encoding, eg `decimal-place`) requires approximately `O(logn)` *"primitive digit"* operations. Since (statisticaly) the **values of numbers in a list is increasingly correlated to the size of the list itself** (i.e a list of size `N` contains random numbers in the range `0..N` with **increasingly greater probability as `N` increases** over lists of same size for numbers in a given range), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms (see for example *"what is the true complexity of radix sort?"*).
+Computing the value of a certain number `n` (in a fixed type of encoding, eg `decimal-place`) requires approximately `O(logn)` *"primitive digit"* operations. Since, statistically, the **values of numbers in a list is increasingly correlated to the size of the list itself** (i.e lists of size `N` containing random numbers with values in the range `0..N` have **increasingly greater probability as `N` increases**, over all lists of same size `N` containing arbitrary random numbers), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms.  
+
+See for example *"what is the true complexity of radix sort?"*.
 
 > Classical algorithms for integer sorting require **assumptions about the size of the integers** to be sorted, or else have a **running time dependent on the size**.
 
 -- [*Sorting in Linear Time?* Arne Andersson, Torben Hagerupt, Stefan Nilsson, Rajeev Ramam](https://www.cs.unc.edu/~plaisted/comp550/linear%20time%20sorting.pdf)
 
-However the catch here is that same holds for comparing arbitrary numbers, computationaly one has to compare `primitive digit` by `primitive digit` in sequence on average, hence an additional `O(logn)` complexity for comparison-based algorithms.
+However the catch here is that same holds for comparing arbitrary numbers, computationaly one has to compare `primitive digit` by `primitive digit` in sequence on average, hence an additional `O(logn)` complexity for comparison-based algorithms, over the `O(NlogN)` bound.
 
 
 > Is `O(NlogN)` complexity a kind of *strict base line* for this computational model??
@@ -126,7 +128,7 @@ In a concice library
 
 
 
-> __Algorithms as a ecological technology__     Additionaly, every operation/instruction a computer performs has an energy consumption cost. Thus an efficient algorithm saves energy!  An efficient algorithm performs a computation by trying to use the resources in the best possible manner, so effectively uses energy in the best possible manner.  Where does energy come from? It comes from burning coal or gas (mainly).  So there you have it, efficient code is ecological!  Better start learning your [complexity]( http://en.wikipedia.org/wiki/Computational_complexity_theory) soon.
+> __Algorithms as a ecological technology__     Additionaly, every operation/instruction a computer performs has an energy consumption cost. Thus an efficient algorithm saves energy!  An efficient algorithm performs a computation by trying to use the resources in the best possible manner, so effectively uses energy in the best possible manner.  Where does energy come from? It comes from burning coal or gas (mainly).  So there you have it; efficient code is ecological!  Better start learning your [complexity]( http://en.wikipedia.org/wiki/Computational_complexity_theory) soon.
 
 
 **see also:**
