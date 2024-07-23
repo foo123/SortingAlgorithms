@@ -40,7 +40,7 @@ accesed one at a time (for example an time-input signal). In this case some of t
 > Is `O(N)` sorting possible for arbitrary random numbers??
 
 
-Computing the value of a certain number `n` (in a fixed type of encoding, eg `decimal-place`) requires approximately `O(logn)` *"primitive digit"* operations. Since, statistically, the **values of numbers in a list is increasingly correlated to the size of the list itself** (i.e lists of size `N` containing random numbers with values in the range `0..N` have **increasingly greater probability as `N` increases**, over all lists of same size `N` containing arbitrary random numbers), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms.  
+Computing the value of a certain number `n` (in a fixed type of encoding, eg `decimal-place`) requires approximately `O(logn)` *"primitive digit"* operations. Since, statistically, the **range of values of numbers in a list of given size is increasingly correlated to the size of the list as the size of the list increases** (i.e lists of size `N` containing random numbers with values over the whole range `0..N` have increasingly greater probability, as `N` increases, over all lists of same size `N`, containing random numbers whose values do not cover the whole range `0..N`), one then has an overall complexity of `O(NlogN)` even for arithmetic-based sorting algorithms.  
 
 See for example *"what is the true complexity of radix sort?"*.
 
@@ -48,7 +48,7 @@ See for example *"what is the true complexity of radix sort?"*.
 
 -- [*Sorting in Linear Time?* Arne Andersson, Torben Hagerupt, Stefan Nilsson, Rajeev Ramam](https://www.cs.unc.edu/~plaisted/comp550/linear%20time%20sorting.pdf)
 
-However the catch here is that same holds for comparing arbitrary numbers, computationaly one has to compare `primitive digit` by `primitive digit` in sequence on average, hence an additional `O(logn)` complexity for comparison-based algorithms, over the `O(NlogN)` bound.
+However the *catch* here is that same holds for comparing arbitrary numbers, computationaly one has to compare `primitive digit` by `primitive digit` in sequence on average, hence an additional `O(logn)` complexity for comparison-based algorithms, over the `O(NlogN)` bound.
 
 
 > Is `O(NlogN)` complexity a kind of *strict base line* for this computational model??
