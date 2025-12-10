@@ -58,6 +58,9 @@ According to Knuth's theoretical lower bound theorem for general (comparison) so
 
 A summary of various sorting and searching algorithms can be found in [*SORTING AND SEARCHING ALGORITHMS*, Tom Niemann (pdf)](https://www.epaperpress.com/sortsearch/download/sortsearch.pdf)
 
+Lately, AI has been used to discover faster ways to sort. For new sorting algorithms discovered using AI see:
+[Faster sorting algorithms discovered using deep reinforcement learning, Daniel J. Mankowitz et al, 2023](https://www.nature.com/articles/s41586-023-06004-9?fromPaywallRec=false)
+
 
 **Included Algorithms**
 
